@@ -1,0 +1,121 @@
+@include keyframes(colorz){
+	from{
+		background-color: rgba(0,0,255,0.5);
+	}
+	to{
+		background-color: rgba(255,0,0,0.5);
+	}
+}
+
+.container{
+	.loader{
+		z-index: 999;
+		width: 100%;
+		height: 100vh;
+		background: black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 1;
+		@include transition(opacity 0.5s linear);
+		&:after{
+			content: 'LOADING';
+			color: white;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			width: 100%;
+			height: 100%;
+			font-family: 'Orbiter';
+			font-size: 3em;
+		}
+		&.gone{
+			opacity: 0;
+		}
+	}
+	.title-canvas{
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: blue;
+		overflow: hidden;
+		.title-text{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 9;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			@include flex-direction(column);
+			font-family: 'Orbiter';
+			text-align: center;
+			background-color: rgba(86,21,225,0.5);
+			//@include animation(colorz 5s linear infinite alternate);
+			h1{
+				font-size: 10em;
+				letter-spacing: 10px;
+				@include uppercase();
+				color: $pink;
+				-webkit-text-stroke: 3px black;
+				text-stroke: 3px black;
+				@include user-select(none);
+				text-shadow: 5px 5px 5px black;
+			}
+			h2{
+				//font-family: 'maison';
+				color: white;
+				@include uppercase();
+				font-size: 2em;
+				letter-spacing: 5px;
+				text-shadow: 2px 2px 2px black;
+			}
+		}
+	}
+
+	.body-container{
+		width: 90%;
+		margin: 50px 5%;
+		color: $text;
+		@include mq("medium"){
+			width: 80%;
+			margin: 50px 10%;
+		}
+		@include mq("large"){
+			width: 60%;
+			margin: 50px 20%;
+		}
+		@include mq("widescreen"){
+			width: 50%;
+			margin: 50px 25%;
+		}
+
+		.author{
+			color: $text;
+			text-shadow: 1px 1px 1px black;
+			margin: 10px 0;
+			.author-name{
+				background: $text;
+				color: $background;
+				padding: 0 5px;
+			}
+		}
+		.intro{
+			font-size: 1.25em;
+			font-family: 'maison';
+			font-family: 'Orbiter';
+			@include mq("medium"){
+				font-size: 1.25em;
+			}
+			@include mq("large"){
+				font-size: 1.75em;
+			}
+		}
+	}
+
+}
+
