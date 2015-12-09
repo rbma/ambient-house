@@ -1,0 +1,69 @@
+[
+	{
+		"name": "The KLF",
+		"members": ["Bill Drummond & Jimmy Cauty"],
+		"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+		"parent": "null",
+		"image": "images/klf.png",
+		"links": [],
+		"children": [
+			{
+				"name": "The Orb",
+				"members": ["Alex Paterson & Jimmy Cauty", "Alex Paterson & Kris 'Thrash' Weston"],
+				"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+				"parent": "The KLF",
+				"links": [],
+				"image": "images/orb.png",
+				"children": [
+					{
+						"name": "Mixmaster Morris",
+						"members": "Mixmaster Morris",
+						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+						"image": "images/morris.png",
+						"parent": "The Orb",
+						"links": [],
+						"children": [
+							{
+								"name": "Mira Calix",
+								"parent": "Mixmaster Morris",
+								"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+								"image": "images/mira-calix.png",
+								"links": [
+									{
+										"url": "http://www.redbullmusicacademy.com/lectures/mira-calix-crickets-sing-for-mira",
+										"text": "Watch Mira Calix Lecture"
+									}
+									
+								]
+							}
+						]
+					},
+					{
+						"name": "DJ Food",
+						"members": "DJ Food",
+						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+						"image": "images/djfood.png",
+						"parent": "The Orb",
+						"links": []
+					},
+					{
+						"name": "Aphex Twin",
+						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+						"image": "images/aphex.png",
+						"parent": "The Orb",
+						"links": [],
+						"children": [
+							{
+								"name": "Tetsu Inoue",
+								"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+								"parent": "Aphex Twin",
+								"links": [],
+								"image": "images/tetsu.png"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

@@ -17,7 +17,7 @@ nav.main-nav{
     color: white;
     z-index: 999;
     background: transparent;
-    font-size: 1.5em;
+    font-size: 1.25em;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +38,6 @@ nav.main-nav{
     .text{
         display: none;
         text-decoration: none;
-        @include uppercase();
         @include mq("medium"){
             display: block;
         }

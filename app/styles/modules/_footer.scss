@@ -9,6 +9,14 @@ footer{
 	font-family: 'maison', Helvetica, Arial;
 	margin-top: 7em;
 	margin-left: 5%;
+	@include mq("medium"){
+		width: 75%;
+		margin-left: 12.5%;
+	}
+	@include mq("large"){
+		width: 60%;
+		margin-left: 20%;
+	}
 	img.footer-logo{
 		width: 90%;
 		margin-left: 5%;
@@ -30,7 +38,7 @@ footer{
 			font-size: 2em;
 		}
 		@include mq("large"){
-			font-size: 3em;
+			font-size: 2.5em;
 		}
 	}
 	p.footer-text{
@@ -41,7 +49,7 @@ footer{
 		font-size: 0.95em;
 		font-family: 'maison' !important;
 		@include mq("large"){
-			font-size: 1.3em;
+			font-size: 1.2em;
 		}
 	}
 	.sitemap{
@@ -61,7 +69,7 @@ footer{
 				max-width: 16.25rem;
 			}
 			.link{
-				font-size: 0.75em;
+				font-size: 0.6em;
 				margin: 10px 0;
 				opacity: 0.6;
 				a{

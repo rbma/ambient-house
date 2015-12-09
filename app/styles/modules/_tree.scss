@@ -1,0 +1,70 @@
+.tree-container{
+	position: relative;
+	width: 160%;
+	margin: 50px -30%;
+}
+
+
+.family-info{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 250px;
+	background: $background;
+	top: 0;
+	opacity: 0;
+	@include transform(translateX(0) translateY(0) translateZ(0));
+	@include transition(opacity 0.4s cubic-bezier(.17, .67, .62, .76));
+	padding: 10px;
+	@include display(flex);
+	@include flex-direction(column);
+	@include align-items(flex-start);
+	@include justify-content(center);
+	h2{
+		font-family: 'SFPlanetaryOrbiter';
+	}
+	p{
+		font-family: monospace;
+		font-size: 0.75em;
+	}
+	&.active{
+		opacity: 1;
+	}
+	li{
+		font-family: monospace;
+		font-size: 0.75em;
+		a{
+			background: black;
+			color: white;
+			padding: 5px;
+			margin-left: -5px;
+			text-decoration: none;
+		}
+	}
+}
+
+.family-tree{
+	margin: 0 20%;
+
+}
+
+
+.node{
+	circle{
+		fill: '#fff';
+		stroke: 'blue';
+		stroke-width: 3px;
+		cursor: pointer;
+	}
+	text{
+		font: 12px monospace;
+		fill: white;
+	}
+	image{
+		cursor: pointer;
+	}
+}
+
+path.link{
+	fill: none;
+}

@@ -1,5 +1,7 @@
 'use strict';
 
+const d3 = require('d3');
+
 
 class Kaleidoscope {
 
@@ -30,9 +32,10 @@ class Kaleidoscope {
 
         image.src = 'images/lady.jpg';
 
-
+        this.scope.easeEnabled = true;
         this.scope.zoomTarget = 2.0;
         this.scope.angleTarget = 0.5;
+        this.scope.resizeHandler();
 
         window.addEventListener('mousemove', function(ev){
             self.onMouseMove(ev);
@@ -50,8 +53,16 @@ class Kaleidoscope {
 
         console.log('resize');
 
-        this.container.style.width = window.innerWidth + 'px';
-        this.container.style.height = window.innerHeight + 'px';
+        let w = window.innerWidth + 'px';
+        let h = window.innerHeight + 'px';
+
+        d3.select('#title-canvas')
+            .style('width', w)
+            .style('height', h)
+            .select('canvas')
+            .attr('width', window.innerWidth + 'px')
+            .attr('height', window.innerHeight + 'px');
+
 
     }
 

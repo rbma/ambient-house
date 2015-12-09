@@ -2,6 +2,8 @@
 
 const Headroom = require('headroom.js');
 const Canvas = require('./components/canvas');
+const Tree = require('./components/tree');
+const CloudImage = require('./components/clouds');
 
 
 class Piece {
@@ -18,6 +20,7 @@ class Piece {
 		this.bindSocials();
 		this.setupNav();
 
+
 		//add new kaleido
 		let img = new Image();
 
@@ -28,6 +31,30 @@ class Piece {
 
 		img.src = 'http://cl.ly/image/1X3e0u1Q0M01/cm.jpg';
 
+
+		//add tree
+		let tree = new Tree();
+
+		//add clouds
+		// this.addClouds();
+
+	}
+
+
+	addClouds(){
+
+		let clouds = document.getElementsByClassName('cloud-image');
+
+		for (let i = 0; i < clouds.length; i++ ){
+
+			let img = clouds[i].getAttribute('data-src');
+			let parent = clouds[i];
+
+			let cloud = new CloudImage(img, parent);
+ 
+		}
+
+		// for (let i = 0; i < )
 	}
 
 

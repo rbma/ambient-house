@@ -9,7 +9,7 @@
 
 .container{
 	.loader{
-		z-index: 999;
+		z-index: 7;
 		width: 100%;
 		height: 100vh;
 		background: black;
@@ -26,7 +26,7 @@
 			@include justify-content(center);
 			width: 100%;
 			height: 100%;
-			font-family: 'Orbiter';
+			font-family: 'SFPlanetaryOrbiter';
 			font-size: 3em;
 		}
 		&.gone{
@@ -41,20 +41,22 @@
 		height: 100%;
 		background: blue;
 		overflow: hidden;
+		cursor: pointer;
 		.title-text{
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: 9;
+			z-index: 6;
 			@include display(flex);
 			@include align-items(center);
 			@include justify-content(center);
 			@include flex-direction(column);
-			font-family: 'Orbiter';
+			font-family: 'SFPlanetaryOrbiter';
 			text-align: center;
 			background-color: rgba(86,21,225,0.5);
+			cursor: pointer;
 			//@include animation(colorz 5s linear infinite alternate);
 			h1{
 				font-size: 10em;
@@ -64,7 +66,7 @@
 				-webkit-text-stroke: 3px black;
 				text-stroke: 3px black;
 				@include user-select(none);
-				text-shadow: 5px 5px 5px black;
+				text-shadow: 4px 5px 5px black;
 			}
 			h2{
 				//font-family: 'maison';
@@ -80,7 +82,6 @@
 	.body-container{
 		width: 90%;
 		margin: 50px 5%;
-		color: $text;
 		@include mq("medium"){
 			width: 80%;
 			margin: 50px 10%;
@@ -107,7 +108,6 @@
 		.intro{
 			font-size: 1.25em;
 			font-family: 'maison';
-			font-family: 'Orbiter';
 			@include mq("medium"){
 				font-size: 1.25em;
 			}
@@ -115,7 +115,36 @@
 				font-size: 1.75em;
 			}
 		}
+
+
+
+		blockquote{
+			font-weight: bold;
+			font-size: 2em;
+			&.left{
+				float: left;
+				margin: 50px 20px 50px -25%;
+				width: 50%;
+			}
+			&.right{
+				float: right;
+				margin: 50px -25% 50px 20px;
+				width: 50%;
+			}
+		}
+
+		.cloud-image{
+			width: 150%;
+			margin: 50px -25%;
+		}
 	}
 
 }
+
+.bg-image{
+		width: 100%;
+		height: 600px;
+		background: transparent;
+		position: relative;
+	}
 

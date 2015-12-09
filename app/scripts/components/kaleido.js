@@ -105,6 +105,7 @@ class Kaleido {
 	drawLayer(image){
 
 		let self = this;
+		let ref, ref1;
 
 		self.ctx.save();
 
@@ -113,8 +114,42 @@ class Kaleido {
 		let vLimit = Math.ceil(0.5 * self.height / self.radiusHeight);
 		let hLimit = Math.ceil(0.5 * self.width / (3 * self.radius));
 
-		console.log(hLimit, vLimit);
+		let hStripe = function(){
+			let results = [];
+			for (let i = ref = -hLimit; ref <= hLimit ? i <= hLimit : i >= hLimit; ref <= hLimit ? i++ : i-- ){
+				results.push(i);
+			}
+			return results;
+		}
 
+		let vStripe = function(){
+			let results = [];
+			for (let i = ref1 = -vLimit; ref1 <= vLimit ? i <= vLimit : i >= vLimit; ref1 <= vLimit ? i++ : i--){
+				results.push(i);
+			}
+			return results;
+		}
+
+		for (let k = 0; let len = vStripe.length; k < len; k++ ){
+			let v = vStripe[k];
+			self.ctx.save();
+			self.ctx.translate(0, self.radiusHeight * v);
+
+			if (Math.abs(v) % 2){
+				self.ctx.translate(1.5 * self.radius, 0);
+			}
+
+			for (let l = 0; let len1 = hStripe.length; l < len1; l++ ){
+				let h = hStripe[l];
+				self.ctx.save();
+				self.ctx.translate(3 * h * self.radius, 0);
+				self.drawCell(image);
+				self.ctx.restore();
+			}
+
+			self.ctx.restore();
+		}
+		return self.ctx.restore();
 	}
 
 	animate(){
