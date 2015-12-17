@@ -3,7 +3,7 @@
 const Headroom = require('headroom.js');
 const Canvas = require('./components/canvas');
 const Tree = require('./components/tree');
-const CloudImage = require('./components/clouds');
+const BGImages = require('./components/bg-images');
 
 
 class Piece {
@@ -35,8 +35,7 @@ class Piece {
 		//add tree
 		let tree = new Tree();
 
-		//add clouds
-		// this.addClouds();
+		let bgImages = new BGImages();
 
 	}
 
@@ -54,7 +53,6 @@ class Piece {
  
 		}
 
-		// for (let i = 0; i < )
 	}
 
 

@@ -143,7 +143,7 @@ class Tree {
 			.attr('x', -75)
 			.attr('width', 150)
 			.attr('height', 20)
-			.attr('fill', 'black');
+			.attr('fill', 'rgba(40,0,215,1)');
 
 		
 

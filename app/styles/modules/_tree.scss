@@ -1,7 +1,17 @@
 .tree-container{
 	position: relative;
-	width: 160%;
-	margin: 50px -30%;
+	width: 150%;
+	margin: 50px -25%;
+	color: $text;
+	text-align: center;
+	h1{
+		@include uppercase();
+		background: $text;
+		padding: 20px;
+		width: 60%;
+		margin: 0 20%;
+		color: white;
+	}
 }
 
 
@@ -20,6 +30,7 @@
 	@include flex-direction(column);
 	@include align-items(flex-start);
 	@include justify-content(center);
+	text-align: left;
 	h2{
 		font-family: 'SFPlanetaryOrbiter';
 	}
@@ -34,7 +45,7 @@
 		font-family: monospace;
 		font-size: 0.75em;
 		a{
-			background: black;
+			background: $text;
 			color: white;
 			padding: 5px;
 			margin-left: -5px;
@@ -44,7 +55,7 @@
 }
 
 .family-tree{
-	margin: 0 20%;
+	margin: 0 15%;
 
 }
 
@@ -52,7 +63,6 @@
 .node{
 	circle{
 		fill: '#fff';
-		stroke: 'blue';
 		stroke-width: 3px;
 		cursor: pointer;
 	}
