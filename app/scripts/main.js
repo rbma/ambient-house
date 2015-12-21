@@ -29,13 +29,13 @@ class Piece {
 			let canvas = new Canvas(img);
 		}
 
-		img.src = 'http://cl.ly/image/1X3e0u1Q0M01/cm.jpg';
+		img.src = 'images/fractal.jpg';
 
 
 		//add tree
 		let tree = new Tree();
 
-		let bgImages = new BGImages();
+		//let bgImages = new BGImages();
 
 	}
 

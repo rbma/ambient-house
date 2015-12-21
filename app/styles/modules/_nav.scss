@@ -22,6 +22,7 @@ nav.main-nav{
     left: 0;
     width: 100%;
     @include fast();
+    mix-blend-mode: difference;
     .logo{
         width: 60px;
         height: 30px;
@@ -80,9 +81,6 @@ nav.main-nav{
         @include transform(translateY(0) translateZ(0));
     }
     &.headroom--unpinned{
-        @include transform(translateY(-100%) translateZ(0));
-    }
-    &.headroom--top{
         @include transform(translateY(-100%) translateZ(0));
     }
 

@@ -39,38 +39,38 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: blue;
+		background: url(../images/tile.png) repeat top left;
 		overflow: hidden;
 		cursor: pointer;
+		canvas{
+			border: 10px solid black;
+		}
 		.title-text{
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 100%;
+			height: 90%;
 			z-index: 6;
+			bottom: 50px;
 			@include display(flex);
 			@include align-items(center);
-			@include justify-content(center);
+			@include justify-content(flex-end);
 			@include flex-direction(column);
-			font-family: 'SFPlanetaryOrbiter';
 			text-align: center;
-			background-color: rgba(86,21,225,0.5);
 			cursor: pointer;
 			//@include animation(colorz 5s linear infinite alternate);
 			h1{
-				font-size: 10em;
-				letter-spacing: 10px;
+				font-size: 5em;
+				letter-spacing: 30px;
 				@include uppercase();
 				color: $pink;
-				-webkit-text-stroke: 3px black;
-				text-stroke: 3px black;
 				@include user-select(none);
 				text-shadow: 4px 5px 5px black;
 			}
 			h2{
 				//font-family: 'maison';
-				color: white;
+				color: $pink;
 				@include uppercase();
 				font-size: 2em;
 				letter-spacing: 5px;
@@ -82,13 +82,17 @@
 	.body-container{
 		width: 90%;
 		margin: 50px 5%;
+		background: white;
 		@include mq("medium"){
 			width: 80%;
 			margin: 50px 10%;
 		}
 		@include mq("large"){
-			width: 65%;
-			margin: 50px 17.5%;
+			width: 80%;
+			margin: 50px 10%;
+			p{
+				padding: 0 5%;
+			}
 		}
 		@include mq("widescreen"){
 			width: 50%;

@@ -30,7 +30,7 @@ class Kaleidoscope {
             self.scope.setImageDirect(image);
         }
 
-        image.src = 'images/lady.jpg';
+        image.src = 'images/fractal.jpg';
 
         this.scope.easeEnabled = true;
         this.scope.zoomTarget = 2.0;
@@ -53,15 +53,18 @@ class Kaleidoscope {
 
         console.log('resize');
 
-        let w = window.innerWidth + 'px';
-        let h = window.innerHeight + 'px';
+        let w = window.innerWidth;
+        let h = window.innerHeight;
 
         d3.select('#title-canvas')
-            .style('width', w)
-            .style('height', h)
+            .style('width', w + 'px')
+            .style('height', h + 'px')
             .select('canvas')
-            .attr('width', window.innerWidth + 'px')
-            .attr('height', window.innerHeight + 'px');
+            .attr('width', window.innerWidth / 2 + 'px')
+            .attr('height', window.innerHeight / 2+ 'px')
+            .style('position', 'absolute')
+            .style('left', w / 4 + 'px')
+            .style('top', h / 4 + 'px');
 
 
     }
