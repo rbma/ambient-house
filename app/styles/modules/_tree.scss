@@ -1,26 +1,32 @@
 .tree-container{
 	position: relative;
-	width: 150%;
-	margin: 50px -25%;
+	width: 90%;
+	margin: 0;
 	color: $text;
 	text-align: center;
+	padding: 50px 20px;
+	margin: 0 5%;
+	background: white;
+	border: 5px solid black;
 	h1{
 		@include uppercase();
-		background: $text;
+		background: $background;
 		padding: 20px;
 		width: 60%;
 		margin: 0 20%;
-		color: white;
+		color: $text;
+		border: 5px solid $text;
 	}
 }
 
 
 .family-info{
 	position: absolute;
-	left: 0;
+	@include fast();
+	left: 5px;
 	height: 100%;
-	width: 250px;
-	background: $background;
+	width: 200px;
+	color: black;
 	top: 0;
 	opacity: 0;
 	@include transform(translateX(0) translateY(0) translateZ(0));
@@ -32,17 +38,15 @@
 	@include justify-content(center);
 	text-align: left;
 	h2{
-		font-family: 'SFPlanetaryOrbiter';
+		//font-family: 'SFPlanetaryOrbiter';
 	}
 	p{
-		font-family: monospace;
 		font-size: 0.75em;
 	}
 	&.active{
 		opacity: 1;
 	}
 	li{
-		font-family: monospace;
 		font-size: 0.75em;
 		a{
 			background: $text;
@@ -54,10 +58,10 @@
 	}
 }
 
-.family-tree{
-	margin: 0 15%;
+// .family-tree{
+// 	margin: 0 15%;
 
-}
+// }
 
 
 .node{
@@ -67,7 +71,7 @@
 		cursor: pointer;
 	}
 	text{
-		font: 12px monospace;
+		font: 12px 'maison';
 		fill: white;
 	}
 	image{

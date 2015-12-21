@@ -11,6 +11,8 @@
 	padding: 5px;
 	cursor: pointer;
 	margin: 50px 0 25px 0;
+	border: 5px solid black;
+	background: white;
 	&.video-right{
 		@include mq("large"){
 			float: right;

@@ -60,11 +60,11 @@ class Kaleidoscope {
             .style('width', w + 'px')
             .style('height', h + 'px')
             .select('canvas')
-            .attr('width', window.innerWidth / 2 + 'px')
-            .attr('height', window.innerHeight / 2+ 'px')
+            .attr('width', window.innerWidth / 1.5 + 'px')
+            .attr('height', window.innerHeight / 1.5 + 'px')
             .style('position', 'absolute')
-            .style('left', w / 4 + 'px')
-            .style('top', h / 4 + 'px');
+            .style('left', w / 6 + 'px')
+            .style('top', h / 6 + 'px');
 
 
     }

@@ -12,7 +12,6 @@ nav.main-nav{
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
-    background: white;
     border-bottom: 1px white;
     color: white;
     z-index: 999;
@@ -38,7 +37,7 @@ nav.main-nav{
     .text{
         display: none;
         text-decoration: none;
-        color: $text;
+        color: white;
         @include mq("medium"){
             display: block;
         }

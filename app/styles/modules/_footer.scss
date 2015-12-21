@@ -5,17 +5,22 @@
 // -------------------------------------------------
 footer{
 	width: 90%;
-	color: blue;
+	color: $text;
 	font-family: 'maison', Helvetica, Arial;
 	margin-top: 7em;
 	margin-left: 5%;
+	margin-bottom: 50px;
+	background: white;
+	border: 5px solid black;
+	mix-blend-mode: difference;
 	@include mq("medium"){
 		width: 75%;
 		margin-left: 12.5%;
 	}
 	@include mq("large"){
-		width: 60%;
-		margin-left: 20%;
+		width: 70%;
+		margin-left: 15%;
+		padding: 50px 5%;
 	}
 	img.footer-logo{
 		width: 90%;
@@ -34,6 +39,7 @@ footer{
 		text-align: center;
 		font-family: 'ClanPro';
 		font-size: 1.25em;
+		mix-blend-mode: difference;
 		@include mq("medium"){
 			font-size: 2em;
 		}

@@ -143,7 +143,7 @@ class Tree {
 			.attr('x', -75)
 			.attr('width', 150)
 			.attr('height', 20)
-			.attr('fill', 'rgba(40,0,215,1)');
+			.attr('fill', 'black');
 
 		
 
@@ -215,10 +215,11 @@ class Tree {
 		d3.select('#bio')
 			.text(d.bio);
 
-		d3.select('.info-links')
+		let links = d3.select('.info-links')
 			.selectAll('li')
-			.data(linkData)
-			.enter()
+			.data(linkData);
+
+		links.enter()
 			.append('li')
 			.insert('a')
 			.attr('href', function(d){
@@ -227,6 +228,8 @@ class Tree {
 			.text(function(d){
 				return d.text;
 			});
+
+		links.exit().remove();
 
 
 
