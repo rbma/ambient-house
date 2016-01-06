@@ -7,9 +7,9 @@ class Tree {
 	constructor(){
 		this.margin = {
 			top: 60,
-			right: 0,
+			right: 20,
 			bottom: 20,
-			left: 0
+			left: 20
 		};
 
 		this.modalActive = false;
@@ -19,6 +19,7 @@ class Tree {
 		this.height = 0;
 		this.width = 0;
 		this.transitionRun = false;
+		this.duration = 750;
 
 		this.tree = null;
 		this.diagonal = null;
@@ -33,17 +34,34 @@ class Tree {
 
 		d3.json('data/family.json', function(err, data){
 			self.data = data[0];
+			self.data.x0 = 0;
+			self.data.y0 = self.width / 2;
 			self.initChart();
 		});
 
-		let column = document.getElementsByClassName('body-container')[0];
+		let column = document.getElementsByClassName('family-tree')[0];
 
 		this.width = column.offsetWidth - this.margin.left - this.margin.right;
-		this.height = window.innerHeight;
+		this.height = window.innerHeight * 2;
 	}
 
 	initChart(){
 		let self = this;
+
+
+		// ------------------------------------------------
+		// Collapse children
+		//
+		function collapse(d){
+			console.log(d.children);
+			if (d.children){
+				d._children = d.children;
+				d._children.forEach(collapse);
+				d.children = null;
+			}
+		}
+
+
 
 		self.tree = d3.layout.tree()
 			.size([self.width, self.height]);
@@ -61,6 +79,11 @@ class Tree {
 			.attr('transform', 'translate(0,' + self.margin.top + ')');
 
 
+		// ------------------------------------------------
+		// Collapse data
+		//
+		
+		// self.data.children.forEach(collapse);
 		self.update(self.data);
 
 		//add waypoint
@@ -81,25 +104,40 @@ class Tree {
 
 		let self = this;
 
-		let nodes = self.tree.nodes(data);
+		let nodes = self.tree.nodes(data).reverse();
 		let links = self.tree.links(nodes);
 		
 
 		//distance between nodes
 		nodes.forEach(function(d){
-			d.y = d.depth * 150;
+			
+			if (d.depth === 0 || d.depth === 1){
+				d.y = d.depth * 120;
+			}
+
+
+			else{
+				d.y = d.depth * 180;
+			}
+
 		});
 
 		//declare nodes + enter
 		let node = self.svg.selectAll('g.node')
 			.data(nodes, function(d, i){
 				return d.id || (d.id = ++i);
-			})
-			.enter()
+			});
+
+		// ------------------------------------------------
+		// Enter any new nodes at parent's previous position
+		//
+		
+		let nodeEnter = node.enter()
 			.append('g')
 			.attr('class', 'node')
 			.attr('transform', function(d){
-				return 'translate(' + d.x + ',' + d.y + ')';
+				console.log(data.y0);
+				return 'translate(' + data.y0 + ',' + data.x0 + ')';
 			});;
 
 
@@ -108,10 +146,10 @@ class Tree {
 			.attr('xlink:href', function(d){
 				return d.image;
 			})
-			.attr('x', '-35px')
-			.attr('y', '-35px')
-			.attr('width', '70px')
-			.attr('height', '70px')
+			.attr('x', '-25px')
+			.attr('y', '-25px')
+			.attr('width', '50px')
+			.attr('height', '50px')
 			.on('mouseover', function(d){
 				d3.select(this)
 					.transition()
@@ -125,10 +163,10 @@ class Tree {
 				d3.select(this)
 					.transition()
 					.duration(300)
-					.attr('width', '60px')
-					.attr('height', '60px')
-					.attr('x', '-30px')
-					.attr('y', '-30px');
+					.attr('width', '50px')
+					.attr('height', '50px')
+					.attr('x', '-25px')
+					.attr('y', '-25px');
 			})
 			.on('click', self.handleClick);
 
@@ -140,10 +178,10 @@ class Tree {
 			.attr('y', function(d){
 				return 50;
 			})
-			.attr('x', -75)
-			.attr('width', 150)
+			.attr('x', -50)
+			.attr('width', 100)
 			.attr('height', 20)
-			.attr('fill', 'black');
+			.attr('fill', 'white');
 
 		
 
@@ -178,19 +216,19 @@ class Tree {
 
 			images.transition()
 				.delay(function(d,i){
-					return i * 200;
+					return i * 100;
 				})
-				.duration(400)
+				.duration(200)
 				.attr('width', 100)
 				.attr('height', 100)
 				.attr('x', '-50px')
 				.attr('y', '-50px')
 				.transition()
-				.duration(400)
-				.attr('x', '-35px')
-				.attr('y', '-35px')
-				.attr('width', '70px')
-				.attr('height', '70px');
+				.duration(200)
+				.attr('x', '-25px')
+				.attr('y', '-25px')
+				.attr('width', '50px')
+				.attr('height', '50px');
 
 			self.transitionRun = true;
 
@@ -248,9 +286,7 @@ class Tree {
 			.enter()
 			.insert('path', 'g')
 			.attr('class', 'link')
-			.attr('d', self.diagonal)
-			.style('stroke', 'black')
-			.style('stroke-width', '1px');
+			.attr('d', self.diagonal);
 	}
 
 };

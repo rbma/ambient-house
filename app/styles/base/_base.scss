@@ -14,8 +14,8 @@
 }
 
 ::selection{
-	background: $blue;
-	color: $background;
+	background: rgba(255,0,255,1);
+	color: $text;
 }
 
 img{
@@ -34,6 +34,7 @@ body{
 	padding: 0;
 	background: url(../images/tile.png) repeat top left;
 	background-size: 10px;
+	background-attachment: fixed;
 
 	&.invert{
 		@include filter(invert(1));

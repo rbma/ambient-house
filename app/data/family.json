@@ -16,6 +16,33 @@
 				"image": "images/orb.png",
 				"children": [
 					{
+						"name": "Steve Hillage",
+						"members": "Steve Hillage",
+						"bio": "Lorem ipsum",
+						"parent": "The Orb",
+						"image": "images/steve-hillage.png",
+						"links": [],
+						"children": [
+							{
+								"name": "System 7",
+								"members": "System 7",
+								"bio": "Lorem ipsum",
+								"parent": "Steve Hillage",
+								"image": "images/system-7.png",
+								"links": []
+							}
+						]
+
+					},
+					{
+						"name": "Space (Jimmy Cauty)",
+						"members": "Jimmy Cauty",
+						"bio": "lorem ipsum",
+						"parent": "The Orb",
+						"links": [],
+						"image": "images/jimmy-cauty.png"
+					},
+					{
 						"name": "Mixmaster Morris",
 						"members": "Mixmaster Morris",
 						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
@@ -35,33 +62,134 @@
 									}
 									
 								]
-							}
-						]
-					},
-					{
-						"name": "DJ Food",
-						"members": "DJ Food",
-						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
-						"image": "images/djfood.png",
-						"parent": "The Orb",
-						"links": []
-					},
-					{
-						"name": "Aphex Twin",
-						"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
-						"image": "images/aphex.png",
-						"parent": "The Orb",
-						"links": [],
-						"children": [
+							},
+							{
+								"name": "Move D",
+								"bio": "Lorem ipsum",
+								"parent": "Mixmaster Morris",
+								"links": [],
+								"image": "images/move-d.png",
+								"children": [
+									{
+										"name": "Reagenz",
+										"bio": "Lorem ipsum",
+										"members": [],
+										"links": [],
+										"image": "images/reagenz.png"
+									},
+									{
+										"name": "Higher Intelligence Agency",
+										"bio": "Lorem ipsum",
+										"members": "",
+										"links": [],
+										"image": "images/higher-intelligence.png"
+									}
+								]
+							},
+							{
+								"name": "Deep Space Network",
+								"bio": "lorem ipsum",
+								"parent": "Mixmaster Morris",
+								"links": [],
+								"image": "images/deep-space-network.png",
+								"children": [
+									{
+										"name": "Reagenz",
+										"bio": "Lorem ipsum",
+										"members": [],
+										"links": [],
+										"image": "images/reagenz.png",
+										"parent": "Spacetime Continuum"
+									}
+								]
+
+							},
 							{
 								"name": "Tetsu Inoue",
 								"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
-								"parent": "Aphex Twin",
+								"parent": "Mixmaster Morris",
 								"links": [],
-								"image": "images/tetsu.png"
+								"image": "images/tetsu.png",
+								"children": [
+									{
+										"name": "Mr. YT",
+										"bio": "Lorem ipsum",
+										"parent": "Tetsu Inoue",
+										"links": [],
+										"image": "images/mr-yt.png"
+									}
+								]
+							},
+							{
+								"name": "Coldcut",
+								"members": "Matt Black, Jonathan More",
+								"parent": "Mixmaster Morris",
+								"bio": "Influential UK DJ and production act working broadly in the field of electronic music. They also founded the eclectic label Ninja Tune.",
+								"image": "images/coldcut.png",
+								"children": [
+									{
+										"name": "DJ Food",
+										"members": "DJ Food",
+										"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+										"image": "images/djfood.png",
+										"parent": "Coldcut",
+										"links": []
+									}
+								]
+							},
+							{
+								"name": "Aphex Twin",
+								"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at risus tempus, volutpat turpis vitae, porta justo. Phasellus ultricies a lectus sit amet pretium. Aenean eget dignissim elit, in sollicitudin libero. Mauris urna tortor, porttitor eu mauris vitae, dignissim commodo massa",
+								"image": "images/aphex.png",
+								"parent": "Mixmaster Morris",
+								"links": []
+							},
+							{
+								"name": "Black Dog",
+								"members": "",
+								"bio": "Lorem ipsum",
+								"image": "images/black-dog.png",
+								"parent": "Mixmaster Morris",
+								"links": []
 							}
 						]
+					},
+					
+					{
+						"name": "Youth",
+						"members": "Martin Glover",
+						"bio": "Lorem ipsum",
+						"parent": "The Orb",
+						"links": [],
+						"image": "images/youth.png"
+					},
+					{
+						"name": "Thomas Fehlmann",
+						"members": "Thomas Fehlmann",
+						"bio": "Lorem ipsum",
+						"parent": "The Orb",
+						"links": [],
+						"image": "images/thomas-fehlmann.png",
+						"children": [
+							{
+								"name": "Sun Electric",
+								"members": "Tom Thiel, Max Loderbauer",
+								"bio": "Lorem ipsum",
+								"parent": "Thomas Fehlmann",
+								"links": [],
+								"image": "images/sun-electric.png"
+							}
+						]
+					},
+					{
+						"name": "Tom Green",
+						"members": "Tom Green",
+						"bio": "lorem ipsum",
+						"parent": "The Orb",
+						"links": [],
+						"image": "images/tom-green.png"
 					}
+
 				]
 			}
 		]

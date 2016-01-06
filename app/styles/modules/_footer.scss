@@ -11,7 +11,7 @@ footer{
 	margin-left: 5%;
 	margin-bottom: 50px;
 	background: white;
-	border: 5px solid black;
+	border: $border;
 	mix-blend-mode: difference;
 	@include mq("medium"){
 		width: 75%;
