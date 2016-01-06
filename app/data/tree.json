@@ -1,0 +1,102 @@
+{
+  "name": "The KLF",
+  "image": "images/klf.png",
+  "children": [
+    {
+      "name": "The Orb",
+      "image": "images/orb.png",
+      "children": [
+        {
+          "name": "Steve Hillage",
+          "image": "images/steve-hillage.png",
+          "children": [
+            {
+              "name": "System 7",
+              "image": "images/system-7.png"
+            }
+          ]
+        },
+        {
+          "name": "Mixmaster Morris",
+          "image": "images/morris.png",
+          "children": [
+            {
+              "name": "Mira Calix",
+              "image": "images/mira-calix.png"
+            },
+            {
+              "name": "Aphex Twin",
+              "image": "images/aphex.png"
+            },
+            {
+              "name": "The Black Dog",
+              "image": "images/black-dog.png"
+            },
+            {
+              "name": "Move D",
+              "image": "images/move-d.png",
+              "children": [
+                {
+                  "name": "Higher Intelligence Agency",
+                  "image": "images/higher-intelligence.png"
+                },
+                {
+                  "name": "Reagenz",
+                  "image": "images/reagenz.png"
+                }
+              ]
+            },
+            {
+              "name": "Tetsu Inoue",
+              "image": "images/tetsu.png",
+              "children": [
+                {
+                  "name": "Mr. YT",
+                  "image": "images/mr-yt.png"
+                }
+              ]
+            },
+            {
+              "name": "Coldcut",
+              "image": "images/coldcut.png",
+              "children": [
+                {
+                  "name": "DJ Food",
+                  "image": "images/djfood.png"
+                }
+              ]
+            },
+            {
+              "name": "Deep Space Network",
+              "image": "images/deep-space-network.png"
+            }
+          ]
+        },
+        {
+          "name": "Thomas Fehlmann",
+          "image": "images/thomas-fehlmann.png",
+          "children": [
+            {
+              "name": "Sun Electric",
+              "image": "images/sun-electric.png"
+            }
+          ]
+        },
+        {
+          "name": "Tom Green",
+          "image": "images/tom-green.png"
+        },
+        {
+          "name": "Youth",
+          "image": "images/youth.png",
+          "children": [
+            {
+              "name": "The Fireman",
+              "image": "images/fireman.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

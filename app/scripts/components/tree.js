@@ -13,40 +13,63 @@ class Tree {
 		};
 
 		this.modalActive = false;
-
 		this.svg = null;
 		this.data = null;
 		this.height = 0;
 		this.width = 0;
 		this.transitionRun = false;
 		this.duration = 750;
-
 		this.tree = null;
 		this.diagonal = null;
 		this.waypoint = null;
 		this.nodes = [];
-
 		this.initChart();
+
+
 	}
 
+
+	// -------------------------------------------------
+	//
+	// AJAX Fetch
+	// 
+	// -------------------------------------------------
+	
 	initData(){
 		let self = this;
 
 
-		d3.json('data/family.json', function(err, data){
-			self.data = data[0];
-			console.log(self.data);
-			self.data.x0 = 0;
-			self.data.y0 = self.width / 2;
+		function hideChildren(node){
+			if (node.children){
+				node.children.forEach(function(c){
+					hideChildren(c);
+				});
+				node._children = node.children;
+				node.children = null;
+			}
+		}
+
+		d3.json('data/tree.json', function(err, data){
+
+			if (err){
+				throw err;
+			}
+
+			// hideChildren(data);
 			
-			// ------------------------------------------------
-			// Collapse data
-			//
-			self.collapse(self.data);
+			self.data = data;
+
 			self.update(self.data);
 		});
 	}
 
+
+	// -------------------------------------------------
+	//
+	// Set up chart with sizing + main functions
+	// 
+	// -------------------------------------------------
+	
 	initChart(){
 		let self = this;
 
@@ -83,18 +106,7 @@ class Tree {
 		//
 		self.initData()
 		
-
-	
-		//add waypoint
-		// this.waypoint = new Waypoint({
-		// 	element: document.getElementById('family-tree'),
-		// 	offset: '50%',
-		// 	handler: function(direction){
-		// 		if (direction === 'down'){
-		// 			self.runTransition();
-		// 		}
-		// 	}
-		// });
+		//add waypoint here...
 
 	}
 
@@ -114,28 +126,10 @@ class Tree {
 		console.log(column);
 
 		this.width = column.width - this.margin.left - this.margin.right;
-		this.height = window.innerHeight * 2;
+		this.height = window.innerHeight * 1.5;
 
 	}
 
-
-	// ------------------------------------------------
-	// Handles collapsing data
-	//
-	collapse(d){
-		let self = this;
-
-		if (d.children) {
-			
-			d._children = d.children;
-			
-			d._children.forEach(function(child){
-				self.collapse(child);
-			});
-
-			d.children = null;
-		}
-	}
 
 
 	click(d){
@@ -161,7 +155,8 @@ class Tree {
 		// ------------------------------------------------
 		// Compute new tree layout
 		//
-		self.nodes = self.tree.nodes(self.data);
+		//NOTE: using full data on self.nodes, not data passed in
+		self.nodes = self.tree.nodes(self.data).reverse();
 		let links = self.tree.links(self.nodes);
 		
 
@@ -170,7 +165,7 @@ class Tree {
 		// Set distance between nodes
 		//
 		self.nodes.forEach(function(d){
-			d.y = d.depth * 180;
+			d.y = d.depth * 150;
 		});
 
 		
@@ -194,6 +189,10 @@ class Tree {
 			.attr('transform', function(d){
 				return 'translate(' + data.x0 + ',' + data.y0 + ')';
 			})
+			// ------------------------------------------------
+			// Collapse data
+			//
+
 			.on('click', function(d){
 				self.click(d);
 			});
@@ -227,12 +226,15 @@ class Tree {
 					.attr('height', '50px')
 					.attr('x', '-25px')
 					.attr('y', '-25px');
-			})
+			});
 
 
 		
 
-		//add background fill
+		// ------------------------------------------------
+		// Add background fill
+		//
+		
 		// node.append('rect')
 		// 	.attr('y', function(d){
 		// 		return 50;
@@ -468,5 +470,16 @@ class Tree {
 	}
 
 };
+
+
+// this.waypoint = new Waypoint({
+		// 	element: document.getElementById('family-tree'),
+		// 	offset: '50%',
+		// 	handler: function(direction){
+		// 		if (direction === 'down'){
+		// 			self.runTransition();
+		// 		}
+		// 	}
+		// });
 
 module.exports = Tree;
