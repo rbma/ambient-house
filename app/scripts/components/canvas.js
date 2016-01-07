@@ -33,11 +33,17 @@ class Kaleidoscope {
         image.src = 'images/fractal.jpg';
 
         this.scope.easeEnabled = true;
+
+
         this.scope.zoomTarget = 2.0;
         this.scope.angleTarget = 0.5;
         this.scope.resizeHandler();
 
         window.addEventListener('mousemove', function(ev){
+            self.onMouseMove(ev);
+        }, false);
+
+        document.body.addEventListener('touchstart', function(ev){
             self.onMouseMove(ev);
         }, false);
 
@@ -56,24 +62,53 @@ class Kaleidoscope {
         let w = window.innerWidth;
         let h = window.innerHeight;
 
-        d3.select('#title-canvas')
-            .style('width', w + 'px')
-            .style('height', h + 'px')
-            .select('canvas')
-            .attr('width', window.innerWidth / 1.5 + 'px')
-            .attr('height', window.innerHeight / 1.5 + 'px')
-            .style('position', 'absolute')
-            .style('left', w / 6 + 'px')
-            .style('top', h / 6 + 'px');
+        if (window.innerWidth > 1024){
+            d3.select('#title-canvas')
+                .style('width', w + 'px')
+                .style('height', h + 'px')
+                .select('canvas')
+                .attr('width', window.innerWidth / 1.5 + 'px')
+                .attr('height', window.innerHeight / 1.5 + 'px')
+                .style('position', 'absolute')
+                .style('left', w / 6 + 'px')
+                .style('top', h / 6 + 'px');
+        }
+
+        else{
+            d3.select('#title-canvas')
+                .style('width', w + 'px')
+                .style('height', h + 'px')
+                .select('canvas')
+                .attr('width', window.innerWidth + 'px')
+                .attr('height', window.innerHeight + 'px')
+                .style('position', 'absolute')
+                .style('left', '0px')
+                .style('top', '0px');
+        }
+
+        
 
 
     }
 
     onMouseMove(ev){
 
+        let x;
+        let y;
 
-        let x = ev.pageX / window.innerWidth;
-        let y = ev.pageY / window.innerHeight;
+        if (ev.changedTouches){
+
+            x = ev.changedTouches[0].pageX / (window.innerWidth / 2);
+            y = ev.changedTouches[0].pageY / (window.innerHeight / 2);
+        }
+
+        else{
+           x = ev.pageX / window.innerWidth;
+           y = ev.pageY / window.innerHeight; 
+        }
+
+
+        
 
         this.scope.angleTarget = x;
         this.scope.zoomTarget = 0.25 + (0.5 * y);

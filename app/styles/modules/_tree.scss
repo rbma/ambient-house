@@ -7,6 +7,10 @@
 	padding: 50px 20px;
 	margin: 0;
 	background: black;
+	display: none;
+	@include mq("medium"){
+		display: block;
+	}
 	@include mq("widescreen"){
 		width: 80%;
 		margin: 0 10%;
@@ -72,22 +76,28 @@ path.link{
 // 
 // -------------------------------------------------
 .fixed-tree-container{
-	position: fixed;
+	
 	bottom: 0;
 	left: 0;
-	@include fast();
+	
 	width: 100%;
 	height: 150px;
 	background: black;
 	color: white;
 	border-top: 1px solid white;
-	@include transform(translateY(150px) translateZ(0));
-	@include transition(all 0.5s ease-out);
 	padding: 10px 20px;
-	@include display(flex);
-	@include flex-direction(column);
-	@include align-items(flex-start);
-	@include justify-content(center);
+	display: none;
+	
+	@include mq("large"){
+		position: fixed;
+		@include fast();
+		@include display(flex);
+		@include flex-direction(column);
+		@include align-items(flex-start);
+		@include justify-content(center);
+		@include transform(translateY(150px) translateZ(0));
+		@include transition(all 0.5s ease-out);
+	}
 	&.active{
 		@include transform(translateY(0) translateZ(0));
 	}

@@ -1,6 +1,7 @@
 'use strict';
 
 const Headroom = require('headroom.js');
+const Fastclick = require('fastclick');
 const Canvas = require('./components/canvas');
 const Tree = require('./components/familytree');
 const BGImages = require('./components/bg-images');
@@ -16,7 +17,6 @@ class Piece {
 	//
 	
 	init(){
-		console.log('What up son?');
 		this.bindSocials();
 		this.setupNav();
 
@@ -25,7 +25,6 @@ class Piece {
 		let img = new Image();
 
 		img.onload = function(){
-			console.log(img, img.width);
 			let canvas = new Canvas(img);
 		}
 
@@ -36,6 +35,15 @@ class Piece {
 		let tree = Tree();
 
 		//let bgImages = new BGImages();
+		// ------------------------------------------------
+		// Attach fastclick
+		//
+		if ('addEventListener' in document) {
+			document.addEventListener('DOMContentLoaded', function() {
+				FastClick.attach(document.body);
+			}, false);
+		}
+		
 
 	}
 
@@ -106,8 +114,11 @@ class Piece {
 	//http://wicky.nillia.ms/headroom.js/
 	
 	setupNav(){
-		let header = document.getElementById('nav');
-		let headroom = new Headroom(header);
+		const wrapper = document.getElementById('body-wrapper');
+		const header = document.getElementById('nav');
+		Headroom.options.scroller = wrapper;
+
+		const headroom = new Headroom(header);
 		headroom.init();
 	}
 	
