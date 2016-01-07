@@ -50,6 +50,7 @@
     "d3": "^3.5.10",
     "hammerjs": "^2.0.4",
     "headroom.js": "^0.7.1",
+    "howler": "^1.1.28",
     "querystring": "^0.2.0"
   },
   "browserify": {

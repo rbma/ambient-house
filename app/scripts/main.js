@@ -2,7 +2,7 @@
 
 const Headroom = require('headroom.js');
 const Canvas = require('./components/canvas');
-const Tree = require('./components/tree');
+const Tree = require('./components/familytree');
 const BGImages = require('./components/bg-images');
 
 
@@ -33,7 +33,7 @@ class Piece {
 
 
 		//add tree
-		let tree = new Tree();
+		let tree = Tree();
 
 		//let bgImages = new BGImages();
 

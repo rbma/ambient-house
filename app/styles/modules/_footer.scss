@@ -11,7 +11,6 @@ footer{
 	margin-left: 5%;
 	margin-bottom: 50px;
 	background: white;
-	border: $border;
 	mix-blend-mode: difference;
 	@include mq("medium"){
 		width: 75%;
@@ -21,6 +20,10 @@ footer{
 		width: 70%;
 		margin-left: 15%;
 		padding: 50px 5%;
+	}
+	@include mq("widescreen"){
+		width: 60%;
+		margin-left: 20%;
 	}
 	img.footer-logo{
 		width: 90%;

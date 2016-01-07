@@ -1,98 +1,142 @@
 {
   "name": "The KLF",
   "image": "images/klf.png",
+  "bio": "The KLF were a British acid house band of the late 1980s and early 1990s. Beginning in 1987, Bill Drummond and Jimmy Cauty released hip hop-inspired and sample-heavy records as The Justified Ancients of Mu Mu, and on one occasion as The Timelords.",
   "children": [
     {
       "name": "The Orb",
       "image": "images/orb.png",
+      "bio": "The Orb are an English electronic music group known for spawning the genre of ambient house. Founded in 1988 by Alex Paterson and KLF member Jimmy Cauty, the Orb began as ambient and dub DJs in London.",
       "children": [
         {
           "name": "Steve Hillage",
           "image": "images/steve-hillage.png",
+          "bio": "Stephen Simpson 'Steve' Hillage is an English musician, best known as a guitarist. He is associated with the Canterbury scene and has worked in experimental domains since the late 1960s.",
           "children": [
             {
               "name": "System 7",
-              "image": "images/system-7.png"
+              "image": "images/system-7.png",
+              "bio": "System 7 are a British ambient dance band. Due to the existence of another band called System Seven they were initially billed as 777 in North America."
             }
           ]
         },
         {
           "name": "Mixmaster Morris",
           "image": "images/morris.png",
+          "bio": "Mixmaster Morris is an English ambient DJ and underground musician. Relating specifically to ambient music, Morris stated 'It's exactly what you need if you have a busy and stressful life.",
           "children": [
             {
               "name": "Mira Calix",
-              "image": "images/mira-calix.png"
+              "image": "images/mira-calix.png",
+              "bio": "Mira Calix is the stage name of Chantal Francesca Passamonte, a British-based artist signed to Warp Records."
             },
             {
               "name": "Aphex Twin",
-              "image": "images/aphex.png"
+              "image": "images/aphex.png",
+              "bio": "Richard David James, best known by his alias Aphex Twin, is an Irish-born British electronic musician and composer"
             },
             {
               "name": "The Black Dog",
-              "image": "images/black-dog.png"
+              "image": "images/black-dog.png",
+              "bio": "The Black Dog is a British electronic music group, founded by Ken Downie along with Ed Handley and Andy Turner"
             },
             {
               "name": "Move D",
               "image": "images/move-d.png",
+              "bio": "David Moufang is a German ambient techno musician. He records with his partner, Jonas Grossmann as Deep Space Network project and his solo releases as Move D. His other projects include Earth to Infinity, Reagenz, Koolfang, and Conjoint.",
               "children": [
                 {
-                  "name": "Higher Intelligence Agency",
-                  "image": "images/higher-intelligence.png"
+                  "name": "HIA",
+                  "image": "images/higher-intelligence.png",
+                  "bio": "Higher Intelligence Agency, often also referred to by its acronym HIA, is the main electronic music project of Birmingham, UK based Bobby Bird, who is sometimes joined by collaborator Dave Wheels."
                 },
                 {
                   "name": "Reagenz",
-                  "image": "images/reagenz.png"
+                  "image": "images/reagenz.png",
+                  "bio": "They recorded the first album, entitled 'Reagenz' in both San Francisco and David's native Heidelberg, Germany in 1994 after meeting before an early Autechre show in San Francisco."
                 }
               ]
             },
             {
               "name": "Tetsu Inoue",
               "image": "images/tetsu.png",
+              "bio": "Tetsu Inoue is a producer of electronic music. His style could be described as ambient with a heavy minimalist influence.",
               "children": [
                 {
                   "name": "Mr. YT",
-                  "image": "images/mr-yt.png"
+                  "image": "images/mr-yt.png",
+                  "bio": "Yuji Takenouchi is a Japanese composer and sound designer."
                 }
               ]
             },
             {
               "name": "Coldcut",
               "image": "images/coldcut.png",
+              "bio": "Coldcut are an English electronic music duo composed of Matt Black and Jonathan More. Credited as pioneers for pop sampling in the ‘80s, Coldcut are also considered the first stars of UK electronic",
               "children": [
                 {
                   "name": "DJ Food",
-                  "image": "images/djfood.png"
+                  "image": "images/djfood.png",
+                  "bio": "DJ Food is an electronic music project currently headed by Kevin Foakes, aka Strictly Kev. Originally conceived by the members of Coldcut on the Ninja Tune independent record label, the project started"
+                },
+                {
+                  "name": "NTone Records",
+                  "image": "images/ntone.png",
+                  "bio": "NTone is a sister imprint to the independent record label, Ninja Tune. The imprint is based in London, United Kingdom and specialises in experimental electronic music."
                 }
               ]
             },
             {
               "name": "Deep Space Network",
-              "image": "images/deep-space-network.png"
+              "image": "images/deep-space-network.png",
+              "bio": "Complete your Deep Space Network record collection. Discover Deep Space Network's full discography. Shop new and used Vinyl and CDs."
             }
           ]
+        },
+
+        {
+          "name": "WAU! Mr. Modo",
+          "image": "images/wau.png",
+          "bio": "WAU/Mr. Modo Records was a record label set up by Alex Paterson of The Orb and Martin Glover of Killing Joke. 'WAU' stands for 'What About Us?'' and 'Mr. Modo' is Adam Morris, Paterson's manager. They released several early albums by The Orb that were mainly distributed by record labels such as Big Life. WAU/Mr. Modo Records featured releases from many different ambient artists including Sun Electric, Blue Pearl, and Keiichi Suzuki of the Japanese band Moonriders."
         },
         {
           "name": "Thomas Fehlmann",
           "image": "images/thomas-fehlmann.png",
+          "bio": "Thomas Fehlmann, is a Swiss-born composer/producer who currently lives in Berlin, and has been active in electronic music as far back as the 1980s. He is currently active on the Kompakt record label based in Germany.",
           "children": [
             {
               "name": "Sun Electric",
-              "image": "images/sun-electric.png"
+              "image": "images/sun-electric.png",
+              "bio": "Sun Electric is the name of an electronic music group from Berlin. Their first release was the single 'O'Locco' on the Wau! Mr. Modo label in 1990, and they had a considerable body of work released via the R&S / Apollo labels throughout the following decade."
+            },
+            {
+              "name": "FFWD",
+              "image": "images/ffwd.png",
+              "bio": "Collaboration between Robert Fripp, Thomas Fehlmann, Kris Weston (aka Thrash), and Alex Paterson. Fripp was a founding member of King Crimson, and the other three were all members of The Orb (though Thrash would soon depart from the group.)"
             }
           ]
         },
         {
-          "name": "Tom Green",
-          "image": "images/tom-green.png"
+          "name": "Tom Green / Baku",
+          "image": "images/tom-green.png",
+          "bio": "Another Fine Day, aka film/tv composer Tom Green, is a contributor to 5 albums by The Orb and performer at the Big Chill Festivals 1994>2010.",
+          "children": [
+            {
+              "name": "Another Fine Day",
+              "image": "images/another-fine-day.png",
+              "bio": "Another Fine Day, aka film/tv composer Tom Green, is a contributor to 5 albums by The Orb and performer at the Big Chill Festivals 1994>2010."
+            }
+          ]
         },
         {
           "name": "Youth",
           "image": "images/youth.png",
+          "bio": "Martin Glover, also known as Youth or Orion,[1] (born 27 December 1960 in Farnworth, Lancashire) is a record producer and a founding member and bassist of Killing Joke. He is a member of The Fireman, along with Paul McCartney.",
           "children": [
             {
               "name": "The Fireman",
-              "image": "images/fireman.png"
+              "image": "images/fireman.png",
+              "bio": "The Fireman is the duo of Paul McCartney and Youth (Martin Glover), which records electronic music experiments. Although the members of the band had officially remained anonymous until 2008,[1] their names had been known to the public since soon after the release of their first album"
             }
           ]
         }

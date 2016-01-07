@@ -27,6 +27,8 @@ img{
 html{
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	height: 100%;
 }
 
 body{
@@ -35,7 +37,8 @@ body{
 	background: url(../images/tile.png) repeat top left;
 	background-size: 10px;
 	background-attachment: fixed;
-
+	width: 100%;
+	height: 100%;
 	&.invert{
 		@include filter(invert(1));
 		.container{
@@ -45,6 +48,13 @@ body{
 	}
 }
 
+.body-wrapper{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
 
 .container{
 	width: 100%;

@@ -12,7 +12,6 @@ class Tree {
 			left: 20
 		};
 
-		this.modalActive = false;
 		this.svg = null;
 		this.data = null;
 		this.height = 0;
@@ -23,45 +22,12 @@ class Tree {
 		this.diagonal = null;
 		this.waypoint = null;
 		this.nodes = [];
+		this.i = 0;
 		this.initChart();
 
 
 	}
 
-
-	// -------------------------------------------------
-	//
-	// AJAX Fetch
-	// 
-	// -------------------------------------------------
-	
-	initData(){
-		let self = this;
-
-
-		function hideChildren(node){
-			if (node.children){
-				node.children.forEach(function(c){
-					hideChildren(c);
-				});
-				node._children = node.children;
-				node.children = null;
-			}
-		}
-
-		d3.json('data/tree.json', function(err, data){
-
-			if (err){
-				throw err;
-			}
-
-			// hideChildren(data);
-			
-			self.data = data;
-
-			self.update(self.data);
-		});
-	}
 
 
 	// -------------------------------------------------
@@ -72,20 +38,198 @@ class Tree {
 	
 	initChart(){
 		let self = this;
+		let root = null;
+
+
+		// ------------------------------------------------
+		// Collapse function
+		//
+		
+		function collapse(d){
+			if (d.children){
+				d._children = d.children;
+				d._children.forEach(collapse);
+				d.children = null;
+			}
+		}
+
+
+
+		function update(source){
+
+
+			let nodes = tree.nodes(root).reverse();
+			let links = tree.links(nodes);
+
+			// ------------------------------------------------
+			// Normalize for fixed depth
+			//
+			nodes.forEach(function(d){
+				console.log(d);
+				d.y = d.depth * 100;
+			});
+
+			// ------------------------------------------------
+			// Declare nodes
+			//
+			let node = svg.selectAll('g.node')
+				.data(nodes, function(d){
+					return d.id || (d.id = ++self.i);
+				});
+
+			// ------------------------------------------------
+			// Enter nodes
+			//
+			let nodeEnter = node.enter().append('g')
+				.attr('class', 'node')
+				.attr('transform', function(d){
+					return 'translate(' + source.x0 + ',' + source.y0 + ')';
+				})
+				.on('click', nodeClick);
+
+			// ------------------------------------------------
+			// Circle
+			//
+			nodeEnter.append('circle')
+				.attr('r', 10)
+				.attr('stroke', function(d){
+					return d.children || d._chilren ? 'yellow' : 'rgba(0,255,0,1)';
+				});
+
+			// ------------------------------------------------
+			// Text
+			//
+			nodeEnter.append('text')
+				.attr('y', function(d){
+					return d.children || d._children ? -18 : 18;
+				})
+				.attr('dy', '.35em')
+				.attr('text-anchor', 'middle')
+				.text(function(d){
+					return d.name;
+				})
+				.style('fill-opacity', 1e-6);
+
+			// ------------------------------------------------
+			// Transition to new pos
+			//
+			let nodeUpdate = node.transition()
+				.duration(self.duration)
+				.attr('transform', function(d){
+					return 'translate(' + d.x + ',' + d.y + ')';
+				});
+
+			nodeUpdate.select('circle')
+				.attr('r', 10);
+
+			nodeUpdate.select('text')
+				.style('fill-opacity', 1);
+
+
+			// ------------------------------------------------
+			// Exits
+			//
+			let nodeExit = node.exit()
+				.transition()
+				.duration(self.duration)
+				.attr('transform', function(d){
+					return 'translate(' + source.x + ',' + source.y + ')';
+				})
+				.remove();
+
+			nodeExit.select('circle')
+				.attr('r', 1e-6);
+
+			nodeExit.select('text')
+				.style('fill-opacity', 1e-6);
+
+			
+			// ------------------------------------------------
+			// Add links
+			//
+			
+			let link = svg.selectAll('path.link')
+				.data(links, function(d){
+					return d.target.id;
+				});
+
+			// ------------------------------------------------
+			// Enter
+			//
+			link.enter()
+				.insert('path', 'g')
+				.attr('class', 'link')
+				.attr('d', function(d){
+					let o = {
+						x: source.x0,
+						y: source.y0
+					};
+					return diagonal({
+						source: 0,
+						target: 0
+					});
+				});
+
+			link.transition()
+				.duration(self.duration)
+				.attr('d', diagonal);
+
+
+			link.exit()
+				.transition()
+				.duration(self.duration)
+				.attr('d', function(d){
+					let o = {
+						x: source.x,
+						y: source.y
+					};
+
+					return diagonal({
+						source: o,
+						target: o
+					});
+				})
+				.remove();
+
+
+			// ------------------------------------------------
+			// Stash old pos
+			//
+			nodes.forEach(function(d){
+				d.x0 = d.x;
+				d.y0 = d.y;
+			});
+		}
+
+
+		function nodeClick(d){
+			if (d.children){
+				d._children = d.children;
+				d.children = null;
+			}
+
+			else{
+				d.children = d._children;
+				d._children = null;
+			}
+
+			update(d);
+		}
+
+		
 
 		// ------------------------------------------------
 		// Size chart
 		//
 		this.setChartDimensions();
 
-
 		// ------------------------------------------------
 		// Set chart as tree
 		//
-		self.tree = d3.layout.tree()
+		let tree = d3.layout.tree()
 			.size([self.width, self.height]);
 
-		self.diagonal = d3.svg.diagonal()
+		let diagonal = d3.svg.diagonal()
 			.projection(function(d){
 				return [d.x, d.y];
 			});
@@ -93,20 +237,30 @@ class Tree {
 		// ------------------------------------------------
 		// Add SVG
 		//
-		this.svg = d3.select('.family-tree')
+		let svg = d3.select('.family-tree')
 			.append('svg')
 			.attr('width', self.width + self.margin.right + self.margin.left)
 			.attr('height', self.height + self.margin.top + self.margin.bottom)
 			.append('g')
 			.attr('transform', 'translate(' + self.margin.left + ',' + self.margin.top + ')');
 
-
 		// ------------------------------------------------
 		// Bring in Data
 		//
-		self.initData()
+
+		d3.json('data/tree.json', function(err, data){
+
+			if (err){
+				throw err;
+			}
+
+			// hideChildren(data);
+			
+			root = data;
+			root.children.forEach(collapse);
+			update(root);
+		});
 		
-		//add waypoint here...
 
 	}
 
@@ -123,8 +277,6 @@ class Tree {
 		// Get width of parent DOM element
 		//
 		let column = d3.select('.family-tree').node().getBoundingClientRect();
-		console.log(column);
-
 		this.width = column.width - this.margin.left - this.margin.right;
 		this.height = window.innerHeight * 1.5;
 
@@ -132,22 +284,12 @@ class Tree {
 
 
 
-	click(d){
-		let self = this;
-		if (d.children){
-			d._children = d.children;
-			d.children = null;
-		}
-
-		else{
-			d.children = d._children;
-			d._children = null;
-		}
-
-		self.update(d);
-	}
+	// -------------------------------------------------
+	//
+	// Update cycle
+	// 
+	// -------------------------------------------------
 	
-
 	update(data){
 
 		let self = this;
@@ -187,7 +329,7 @@ class Tree {
 			.append('g')
 			.attr('class', 'node')
 			.attr('transform', function(d){
-				return 'translate(' + data.x0 + ',' + data.y0 + ')';
+				return 'translate(' + data.x + ',' + data.y + ')';
 			})
 			// ------------------------------------------------
 			// Collapse data
@@ -316,7 +458,7 @@ class Tree {
 		link.enter().insert('path', 'g')
 			.attr('class', 'link')
 			.attr('d', function(d){
-				var o = {x: data.x0, y: data.y0};
+				var o = {x: data.x, y: data.y};
 				return self.diagonal({source: o, target: o});
 		});
 
@@ -391,83 +533,6 @@ class Tree {
 		
 	}
 
-
-	handleClick(d){
-
-		let linkData = d.links;
-
-		d3.select('.family-info').classed('active', true);
-
-		d3.select('#name')
-			.text(d.name);
-		d3.select('#bio')
-			.text(d.bio);
-
-		let links = d3.select('.info-links')
-			.selectAll('li')
-			.data(linkData);
-
-		links.enter()
-			.append('li')
-			.insert('a')
-			.attr('href', function(d){
-				return d.url;
-			})
-			.text(function(d){
-				return d.text;
-			});
-
-		links.exit().remove();
-
-	}
-
-
-	addNodeLinks(links){
-		let self = this;
-		
-		let link = self.svg.selectAll('path.link')
-			.data(links, function(d){
-				return d.target.id;
-			});
-
-		link.enter()
-			.insert('path', 'g')
-			.attr('class', 'link')
-			.attr('d', function(d){
-				let o = {x: self.data.x0, y: self.data.y0};
-				return self.diagonal({source: o, target: o});
-			});
-
-		// ------------------------------------------------
-		// Transition to new pos
-		//
-		link.transition()
-			.duration(self.duration)
-			.attr('d', self.diagonal);
-
-		// ------------------------------------------------
-		// Transition exiting nodes
-		//
-		link.exit()
-			.transition()
-			.duration(self.duration)
-			.attr('d', function(d){
-				let o = {x: self.data.x0, y: self.data.y0};
-				return self.diagonal({source: o, target: o});
-			})
-			.remove();
-
-		// ------------------------------------------------
-		// Stash old position for transition
-		//
-		self.nodes.forEach(function(d){
-			d.x0 = d.x;
-			d.y0 = d.y;
-		});
-		
-		
-		
-	}
 
 };
 

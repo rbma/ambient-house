@@ -11,6 +11,11 @@ module.exports = {
         'dest': 'build/lib'
     },
 
+    'audio': {
+        'src': 'app/audio/**/*',
+        'dest': 'build/audio'
+    },
+
     'styles': {
         'src': 'app/styles/**/*.scss',
         'dest': 'build/css'

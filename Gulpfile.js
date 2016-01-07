@@ -113,6 +113,15 @@ gulp.task('fonts', function(){
 });
 
 
+// ------------------------------------------------
+// Copy audio
+//
+gulp.task('audio', function(){
+    return gulp.src(config.audio.src)
+        .pipe(gulp.dest(config.audio.dest));
+});
+
+
 
 // ------------------------------------------------
 // Copy over data
@@ -452,6 +461,7 @@ gulp.task('dev', ['clean'], function(){
     runSequence([
         'apply-dev-environment',
         'data',
+        'audio',
         'extras',
         'lib',
         'views',
@@ -478,6 +488,7 @@ gulp.task('prod', ['clean'], function(){
     runSequence([
         'apply-prod-environment',
         'data',
+        'audio',
         'extras',
         'scripts-prod',
         'lib',
