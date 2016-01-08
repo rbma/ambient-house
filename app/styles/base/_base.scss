@@ -34,7 +34,7 @@ html{
 body{
 	margin: 0;
 	padding: 0;
-	background: white;
+	background: $lightblue;
 	width: 100%;
 	height: 100%;
 	@include mq("large"){
@@ -45,7 +45,7 @@ body{
 	&.invert{
 		@include filter(invert(1));
 		.container{
-			background: white;
+			background: $lightblue;
 			color: red;
 		}
 	}
@@ -56,13 +56,12 @@ body{
 	height: 100%;
 	overflow: hidden;
 	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
 }
 
 .container{
 	width: 100%;
-	overflow-x: hidden;
 	position: relative;
 	color: $text;
 	z-index: 2;
+	
 }

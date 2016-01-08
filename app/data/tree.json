@@ -90,6 +90,25 @@
               "name": "Deep Space Network",
               "image": "images/deep-space-network.png",
               "bio": "Complete your Deep Space Network record collection. Discover Deep Space Network's full discography. Shop new and used Vinyl and CDs."
+            },
+            {
+              "name": "Rising High",
+              "image": "images/rising-high.png",
+              "bio": "Rising High Records was a leading British record label, established in 1991, specializing in rave, techno and ambient chillout music.",
+              "children": [
+                {
+                  "name": "Pete Namlook",
+                  "image": "images/pete-namlook.png",
+                  "bio": "Pete Namlook was an ambient and electronic-music producer and composer. In 1992, he founded the German record label FAX +49-69/450464, which he oversaw.",
+                  "children": [
+                    {
+                      "name": "Fax Records",
+                      "image": "images/fax.png",
+                      "bio": "Lorem ipsum"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },

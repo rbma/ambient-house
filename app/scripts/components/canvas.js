@@ -1,14 +1,18 @@
 'use strict';
 
 const d3 = require('d3');
+const Kaleidoscope = require('./graph');
 
 
-class Kaleidoscope {
+class Canvas {
 
     constructor(){
 
-        this.scope = null;
+        this.kaleidoscope = null;
         this.container = null;
+        this.scrollListener = null;
+        this.mouseListener = null;
+        this.scrollBody = document.getElementById('body-wrapper');
         this.init();
     }
 
@@ -20,103 +24,96 @@ class Kaleidoscope {
         this.container.style.width = window.innerWidth + 'px';
         this.container.style.height = window.innerHeight + 'px';
         
-        this.scope = new Graphemescope(this.container);
+        // ------------------------------------------------
+        // Container, zoomTarget, angleTarget
+        //
+        
+        const kaleidoOptions = {
+            zoomTarget: 1.0,
+            angleTarget: 0.9,
+            easeEnabled: true
+        };
+
+        this.kaleidoscope = new Kaleidoscope(this.container, kaleidoOptions);
 
         let image = new Image();
 
         image.onload = function(){
             let loader = document.getElementById('loader');
             loader.classList.add('gone');
-            self.scope.setImageDirect(image);
+            self.kaleidoscope.setImage(image);
+            self.kaleidoscope.animate();
         }
 
         image.src = 'images/fractal.jpg';
 
-        this.scope.easeEnabled = true;
 
+        this.kaleidoscope.resize();
 
-        this.scope.zoomTarget = 2.0;
-        this.scope.angleTarget = 0.5;
-        this.scope.resizeHandler();
+        this.mouseListener = window.addEventListener('mousemove', self.onMouseMove.bind(this), false);
 
-        window.addEventListener('mousemove', function(ev){
-            self.onMouseMove(ev);
-        }, false);
-
-        document.body.addEventListener('touchstart', function(ev){
-            self.onMouseMove(ev);
-        }, false);
-
+        // ------------------------------------------------
+        // Listen for resize events
+        //
         window.addEventListener('resize', function(){
             self.onResize();
         }, false);
 
+        // ------------------------------------------------
+        // Listen for scroll so we can disable canvas once past it
+        //
+        this.scrollListener = this.scrollBody.addEventListener('scroll', self.onScroll.bind(this), false); 
+        
+
         self.onResize();
     }
+
+    onScroll(ev){
+        let self = this;
+        this.scrollTop = ev.target.scrollTop;
+
+        if (this.scrollTop > window.innerHeight + 100){
+            this.kaleidoscope.destroy();
+            this.scrollBody.removeEventListener(this.scrollListener);
+            window.removeEventListener(self.mouseListener);
+
+        }
+    }
+
 
 
     onResize(){
 
-        console.log('resize');
 
         let w = window.innerWidth;
         let h = window.innerHeight;
 
-        if (window.innerWidth > 1024){
-            d3.select('#title-canvas')
-                .style('width', w + 'px')
-                .style('height', h + 'px')
-                .select('canvas')
-                .attr('width', window.innerWidth / 1.5 + 'px')
-                .attr('height', window.innerHeight / 1.5 + 'px')
-                .style('position', 'absolute')
-                .style('left', w / 6 + 'px')
-                .style('top', h / 6 + 'px');
-        }
+        d3.select('#title-canvas')
+            .style('width', w + 'px')
+            .style('height', h + 'px')
+            .select('canvas')
+            .attr('width', window.innerWidth / 1.5 + 'px')
+            .attr('height', window.innerHeight / 1.5 + 'px')
+            .style('position', 'absolute')
+            .style('left', w / 6 + 'px')
+            .style('top', h / 6 + 'px');
 
-        else{
-            d3.select('#title-canvas')
-                .style('width', w + 'px')
-                .style('height', h + 'px')
-                .select('canvas')
-                .attr('width', window.innerWidth + 'px')
-                .attr('height', window.innerHeight + 'px')
-                .style('position', 'absolute')
-                .style('left', '0px')
-                .style('top', '0px');
-        }
-
-        
+        this.kaleidoscope.resize();
 
 
     }
 
     onMouseMove(ev){
 
-        let x;
-        let y;
+        let x = ev.pageX / window.innerWidth;
+        let y = ev.pageY / window.innerHeight;
 
-        if (ev.changedTouches){
-
-            x = ev.changedTouches[0].pageX / (window.innerWidth / 2);
-            y = ev.changedTouches[0].pageY / (window.innerHeight / 2);
-        }
-
-        else{
-           x = ev.pageX / window.innerWidth;
-           y = ev.pageY / window.innerHeight; 
-        }
-
-
+        this.kaleidoscope.updateAngle(x);
+        this.kaleidoscope.updateZoom(0.25 + (0.5 * y));
         
-
-        this.scope.angleTarget = x;
-        this.scope.zoomTarget = 0.25 + (0.5 * y);
-
-
     }
         
 }
 
 
-module.exports = Kaleidoscope;
+module.exports = Canvas;

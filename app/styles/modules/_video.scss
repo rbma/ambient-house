@@ -10,9 +10,10 @@
 	position: relative;
 	padding: 5px;
 	cursor: pointer;
-	margin: 50px 0 25px 0;
+	margin: 50px 0;
 	border: $border;
-	background: white;
+	background: black;
+	color: $lightblue;
 	&.video-right{
 		@include mq("large"){
 			float: right;
@@ -27,9 +28,10 @@
 
 	.video-caption{
 		font-family: 'maison';
-		font-size: 0.75em;
+		font-size: 0.75rem;
 		padding-top: 20px;
 		display: block;
+		margin-top: 1em;
 	}
 
 	.video-poster{

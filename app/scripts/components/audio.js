@@ -19,23 +19,23 @@ const Audio = {
 
 			self.hover = new Howl({
 				urls: ['audio/click_digi_02.mp3'],
-				volume: 0.5
+				volume: 0.2
 			});
 
 
 			self.click = new Howl({
 				urls: ['audio/zap_future.mp3'],
-				volume: 0.2
+				volume: 0.1
 			});
 
 			self.clickOff = new Howl({
 				urls: ['audio/pad_space_fade.mp3'],
-				volume: 0.3
+				volume: 0.1
 			});
 
 			self.clickOff2 = new Howl({
 				urls: ['audio/pad_space_select.mp3'],
-				volume: 0.3
+				volume: 0.1
 			});
 		}
 	},

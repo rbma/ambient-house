@@ -1,8 +1,9 @@
-var Graphemescope, requestAnimFrame;
+var Graphemescope, requestAnimFrame, timer;
 
 requestAnimFrame = (function() {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
-    return window.setTimeout(callback, 1000 / 30);
+    timer = setTimeout(callback, 1000 / 30);
+    return timer;
   };
 })();
 
@@ -73,6 +74,15 @@ window.Graphemescope = Graphemescope = (function() {
       this.zoomFactor = this.zoomTarget;
       return this.alphaFactor = this.alphaTarget;
     }
+  };
+
+
+  Graphemescope.prototype.cancelAnimation = function(){
+    if (timer){
+      clearTimeout(timer);
+    }
+    
+    window.cancelAnimationFrame();
   };
 
   Graphemescope.prototype.drawImage = function(image) {

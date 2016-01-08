@@ -18,9 +18,31 @@
 		opacity: 1;
 		@include transition(opacity 0.5s linear);
 		background: url(../images/tile.png) repeat top left;
-		background-size: 2px;
+		background-size: 10px;
+		background-color: $lightblue;
+		display: none;
+
+		@include mq("large"){
+			display: block;
+		}
 		&.gone{
 			opacity: 0;
+		}
+	}
+
+	.title-mobile{
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		height: 100vh;
+		z-index: 3;
+		background: url(../images/mobile-title.jpg) no-repeat center center, url(../images/tile.png) repeat top left;
+		background-size: 50%, 10px;
+		margin-bottom: 50px;
+		@include mq("large"){
+			display: none;
 		}
 	}
 	.title-canvas{
@@ -29,62 +51,66 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		
+		display: none;
 		overflow: hidden;
 		cursor: pointer;
+		@include mq("large"){
+			display: block;
+		}
 		canvas{
 			z-index: 4;
 			//border: 10px solid black;
 			box-shadow: 2px 2px 5px black;
 		}
+	}
 
-		.title-text{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 90%;
-			z-index: 6;
-			bottom: 50px;
-			z-index: 5;
-			@include display(flex);
-			@include align-items(center);
-			@include justify-content(flex-end);
-			@include flex-direction(column);
-			//background: rgba(0,0,0,0.3);
-			text-align: center;
-			cursor: pointer;
-			//@include animation(colorz 5s linear infinite alternate);
-			h1{
-				font-size: 2em;
-				letter-spacing: 20px;
-				@include uppercase();
-				color: white;
-				width: 95%;
-				background: black;
-				padding: 5px 10px;
-				@include user-select(none);
-				box-shadow: 2px 2px 5px black;
-				@include mq("large"){
-					width: 70%;
-					letter-spacing: 30px;
-				}
+	.title-text{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 90%;
+		z-index: 6;
+		bottom: 50px;
+		z-index: 9;
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(flex-end);
+		@include flex-direction(column);
+		//background: rgba(0,0,0,0.3);
+		text-align: center;
+		cursor: pointer;
+		//@include animation(colorz 5s linear infinite alternate);
+		h1{
+			font-size: 2em;
+			letter-spacing: 20px;
+			@include uppercase();
+			color: $lightblue;
+			width: 95%;
+			background: black;
+			padding: 5px 10px;
+			@include user-select(none);
+			box-shadow: 2px 2px 5px black;
+			line-height: 1;
+			@include mq("large"){
+				width: 70%;
+				letter-spacing: 30px;
 			}
-			h2{
-				//font-family: 'maison';
-				//color: blue;
-				@include uppercase();
-				background: white;
-				padding: 5px 10px;
-				font-size: 1em;
-				width: 95%;
-				letter-spacing: 10px;
-				text-shadow: 1px 1px 2px black;
-				box-shadow: 2px 2px 5px black;
-				@include mq("large"){
-					width: 70%;
-					text-shadow: 2px 2px 2px black;
-				}
+		}
+		h2{
+			//font-family: 'maison';
+			//color: blue;
+			@include uppercase();
+			background: $lightblue;
+			padding: 5px 10px;
+			font-size: 1em;
+			width: 95%;
+			letter-spacing: 10px;
+			text-shadow: 1px 1px 2px black;
+			box-shadow: 2px 2px 5px black;
+			@include mq("large"){
+				width: 70%;
+				text-shadow: 2px 2px 2px black;
 			}
 		}
 	}
@@ -92,11 +118,11 @@
 	.body-container{
 		width: 100%;
 		margin: 0 0;
-		background: white;
-		padding: 10px;
+		background: $lightblue;
+		padding: 0 1rem;
 		@include mq("medium"){
 			width: 80%;
-			margin: 50px 10%;
+			margin: 0 10%;
 		}
 		@include mq("large"){
 			width: 70%;
@@ -131,11 +157,12 @@
 
 		.section-title{
 			width: 100%;
-			background-color: white;
-			color: black;
+			background-color: black;
+			color: white;
 			border: $border;
 			margin: 50px 0;
 			padding: 20px;
+			box-shadow: 2px 2px 5px black;
 			text-align: center;
 			@include mq("large"){
 				width: 130%;
@@ -148,7 +175,7 @@
 		blockquote{
 			font-weight: bold;
 			font-size: 1.5em;
-			background: white;
+			background: $lightblue;
 			padding: 30px;
 			border: $border;
 			display: none;
@@ -172,7 +199,7 @@
 
 .bg-image{
 	width: 95%;
-	margin-left: 2.5%;
+	margin: 25px 2.5%;
 	height: 400px;
 	background: transparent;
 	position: relative;
@@ -180,17 +207,21 @@
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center !important;
-	background-color: white !important;
+	background-color: $lightblue !important;
 	border: $border;
+	@include mq("medium"){
+		width: 80%;
+		margin: 25px 10%;
+	}
 	@include mq("large"){
 		width: 70%;
-		margin-left: 15%;
+		margin: 25px 15%;
 		height: 600px;
 		height: 100vh;
 	}
 	@include mq("widescreen"){
 		width: 80%;
-		margin-left: 10%;
+		margin: 25px 10%;
 	}
 	p{
 		position: absolute;
@@ -198,11 +229,31 @@
 		left: 10px;
 		z-index: 5;
 		margin: 0;
-		background: white;
+		background: $lightblue;
 		padding: 0 10px;
 		font-size: 1em;
 		border: $border;
 
+	}
+}
+
+
+.end-social{
+	width: 100%;
+	height: 50px;
+	text-align: left;
+	.share-icon{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		margin: 0 5px;
+		cursor: pointer;
+		&.twitter{
+			background: url(../images/end-twitter.svg) no-repeat center center;
+		}
+		&.facebook{
+			background: url(../images/end-facebook.svg) no-repeat center center;
+		}
 	}
 }
 

@@ -13,7 +13,7 @@ const Tree = function(){
 	let initialTextVisible = true;
 	let infoActive = false;
 
-	Audio.init();
+	
 
 	// ------------------------------------------------
 	// Sizing
@@ -165,7 +165,7 @@ const Tree = function(){
 		// Set fixed y depth
 		//
 		nodes.forEach(function(d){
-			d.y = d.depth * 150;
+			d.y = d.depth * 120;
 		});
 
 		let node = svg.selectAll('g.node')
@@ -341,10 +341,6 @@ const Tree = function(){
 
 
 	function nodeclick(d){
-
-
-		console.log(d);
-
 		if (initialTextVisible){
 			d3.select('.initial-text')
 				.transition()

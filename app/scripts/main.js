@@ -1,14 +1,17 @@
 'use strict';
 
 const Headroom = require('headroom.js');
-const Fastclick = require('fastclick');
+const FastClick = require('fastclick').FastClick;
 const Canvas = require('./components/canvas');
 const Tree = require('./components/familytree');
-const BGImages = require('./components/bg-images');
+const Video = require('./components/video');
+const MobileDetect = require('mobile-detect');
+const Audio = require('./components/audio');
 
 
 class Piece {
 	constructor(){
+		this.tree = null;
 		this.init();
 	}
 
@@ -17,53 +20,80 @@ class Piece {
 	//
 	
 	init(){
-		this.bindSocials();
-		this.setupNav();
 
-
-		//add new kaleido
-		let img = new Image();
-
-		img.onload = function(){
-			let canvas = new Canvas(img);
-		}
-
-		img.src = 'images/fractal.jpg';
-
-
-		//add tree
-		let tree = Tree();
-
-		//let bgImages = new BGImages();
-		// ------------------------------------------------
-		// Attach fastclick
-		//
-		if ('addEventListener' in document) {
-			document.addEventListener('DOMContentLoaded', function() {
-				FastClick.attach(document.body);
-			}, false);
-		}
+		const md = new MobileDetect();
+		let self = this;
+		let mobile = false;
 		
 
-	}
+		// ------------------------------------------------
+		// Set up listeners
+		//
+		this.bindSocials();
+		this.setupNav();
+		this.bindVideo();
 
-
-	addClouds(){
-
-		let clouds = document.getElementsByClassName('cloud-image');
-
-		for (let i = 0; i < clouds.length; i++ ){
-
-			let img = clouds[i].getAttribute('data-src');
-			let parent = clouds[i];
-
-			let cloud = new CloudImage(img, parent);
- 
+		// ------------------------------------------------
+		// Sorry, device sniffing
+		//
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			mobile = true;
 		}
 
+		// ------------------------------------------------
+		// Desktop
+		//
+		if (!mobile){
+			
+			let img = new Image();
+
+			img.onload = function(){
+				let canvas = new Canvas(img);
+			}
+
+			img.src = 'images/fractal.jpg';
+
+			// ------------------------------------------------
+			// Init audio
+			//
+			Audio.init();
+			
+		}
+
+		// ------------------------------------------------
+		// Mobile
+		//
+		else{
+
+			// ------------------------------------------------
+			// Attach fastclick
+			//
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+
+		}
+
+		// ------------------------------------------------
+		// Add chart just in case, even though we don't display on mobile
+		//
+		this.tree = Tree();
+
+
+		// ------------------------------------------------
+		// If user sizes up from mobile, make sure chart is ready
+		//
+		window.addEventListener('resize', function(){
+			if (window.innerWidth > 1024 || !self.tree){
+				self.tree = Tree();
+			}
+			if (window.innerWidth <= 1024 || self.tree){
+				self.tree = null;
+			}
+		});
 	}
-
-
 
 
 	// ------------------------------------------------
@@ -78,8 +108,6 @@ class Piece {
 			socials[i].addEventListener('click', self.share, false);
 		}
 	}
-
-
 
 
 	// ------------------------------------------------
@@ -106,8 +134,6 @@ class Piece {
 	    }
 	}
 
-
-
 	// ------------------------------------------------
 	// Setup nav. Use headroom options to set 
 	// scroll listener to div if not using window
@@ -121,6 +147,30 @@ class Piece {
 		const headroom = new Headroom(header);
 		headroom.init();
 	}
+
+
+	// ------------------------------------------------
+	// Watch for clicks on video
+	//
+	bindVideo(){
+		let self = this;
+		let videos = document.getElementsByClassName('video-inner');
+
+		for (let i = 0; i < videos.length; i++ ){
+			videos[i].addEventListener('click', self.playVideo, false);
+		}
+	}
+
+	// ------------------------------------------------
+	// Instantiate new video
+	//
+	playVideo(){
+		let target = this;
+		let src = target.getAttribute('data-src');
+
+		let video = new Video(target, src);
+	}
+	
 	
 };
 
