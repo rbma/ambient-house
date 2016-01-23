@@ -203,6 +203,7 @@ const Tree = function(){
 			.on("click", nodeclick)
 			.on('mouseenter', function(d){
 				// addInfo(d);
+				tip.offset([-20, 0]);
 				tip.show(d);
 
 

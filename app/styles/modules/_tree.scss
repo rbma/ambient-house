@@ -2,25 +2,27 @@
 	line-height: 1;
 	font-weight: bold;
 	padding: 12px;
-	background: rgba(255,255,255, 0.8);
+	background: rgba(255,255,255, 1);
 	color: black;
 	border-radius: 2px;
 	max-width: 200px;
 	width: 200px;
+	border: 1px solid black;
 	p{
 		font-size: 0.6em;
 	}
 	&:after{
 		box-sizing: border-box;
 		display: inline-block;
-		font-size: 12px;
+		font-size: 24px;
 		width: 100%;
 		line-height: 1;
-		color: rgba(255,255,255, 0.8);
+		left: 0;
+		color: rgba(255,255,255, 1);
 		content: "\25BC";
 		position: absolute;
 		text-align: center;
-		bottom: -9px;
+		bottom: -21px;
 	}
 }
 
