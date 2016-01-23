@@ -48,6 +48,7 @@
   "dependencies": {
     "async": "^1.5.0",
     "d3": "^3.5.10",
+    "d3-tip": "^0.6.7",
     "fastclick": "^1.0.6",
     "hammerjs": "^2.0.4",
     "headroom.js": "^0.7.1",

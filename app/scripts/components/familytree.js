@@ -1,7 +1,10 @@
 'use strict';
 
 const d3 = require('d3');
+const d3tip = require('d3-tip');
 const Audio = require('./audio');
+d3tip(d3);
+
 
 const Tree = function(){
 
@@ -65,6 +68,15 @@ const Tree = function(){
 		.attr('height', height + margin.top + margin.bottom)
 		.append('g')
 		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ")");
+
+	const tip = d3.tip().attr('class', 'd3-tip')
+		.html(function(d){
+			return '<h4>' + d.name + '</h4><p>' + d.bio + '</p>';
+		});
+
+
+
+	svg.call(tip);
 
 
 	// ------------------------------------------------
@@ -158,6 +170,7 @@ const Tree = function(){
 	//
 	function update(source){
 
+
 		let nodes = tree.nodes(root).reverse();
 		let links = tree.links(nodes);
 
@@ -189,11 +202,33 @@ const Tree = function(){
 			})
 			.on("click", nodeclick)
 			.on('mouseenter', function(d){
-				addInfo(d);
+				// addInfo(d);
+				tip.show(d);
+
+
 				Audio.onHover();
 			})
-			.on('mouseleave', removeInfo);
+			.on('mouseleave', tip.hide);
 
+
+
+		// ------------------------------------------------
+		// Set arc around node
+		//
+		let arc = d3.svg.arc()
+			.innerRadius(25)
+			.outerRadius(27)
+			.startAngle(Math.PI / 180)
+			.endAngle(2);
+		
+		// ------------------------------------------------
+		// Set circles around nodes
+		//
+		nodeEnter.append('path')
+			.attr('d', arc)
+			.style('fill', 'red');
+
+		
 
 		// ------------------------------------------------
 		// Set image for each incoming node
