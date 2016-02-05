@@ -1,12 +1,15 @@
 'use strict';
 
-const Headroom = require('headroom.js');
-const FastClick = require('fastclick').FastClick;
-const Canvas = require('./components/canvas');
-const Tree = require('./components/familytree');
-const Video = require('./components/video');
-const MobileDetect = require('mobile-detect');
-const Audio = require('./components/audio');
+import Headroom from 'headroom.js';
+import { FastClick } from 'fastclick';
+import MobileDetect from 'mobile-detect';
+
+import Canvas from './components/canvas';
+import Tree from './components/familytree';
+import Video from './components/video';
+import Audio from './components/audio';
+import Form from './components/form';
+
 
 
 class Piece {
@@ -32,6 +35,8 @@ class Piece {
 		this.bindSocials();
 		this.setupNav();
 		this.bindVideo();
+
+		//let form = new Form();
 
 		// ------------------------------------------------
 		// Sorry, device sniffing
@@ -177,5 +182,11 @@ class Piece {
 
 
 
+// ------------------------------------------------
+// Fire it up
+//
 
-let piece = new Piece();
+const piece = new Piece();
+
+
+

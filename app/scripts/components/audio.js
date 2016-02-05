@@ -1,6 +1,6 @@
 'use strict';
 
-const Howler = require('howler').Howl;
+import {Howl, Howler} from 'howler';
 
 
 const Audio = {

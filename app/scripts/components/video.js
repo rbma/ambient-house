@@ -1,7 +1,7 @@
 'use strict';
 
+import querystring from 'querystring';
 
-const querystring = require('querystring');
 
 class Video {
 

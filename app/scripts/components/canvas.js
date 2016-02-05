@@ -1,7 +1,7 @@
 'use strict';
 
-const d3 = require('d3');
-const Kaleidoscope = require('./graph');
+import d3 from 'd3';
+import Kaleidoscope from './graph';
 
 
 class Canvas {
@@ -29,9 +29,9 @@ class Canvas {
         //
         
         const kaleidoOptions = {
-            zoomTarget: 1.0,
-            angleTarget: 0.9,
-            easeEnabled: true
+            zoomTarget: 0.5,
+            angleTarget: 0.8,
+            easeEnabled: false
         };
 
         this.kaleidoscope = new Kaleidoscope(this.container, kaleidoOptions);
@@ -45,7 +45,7 @@ class Canvas {
             self.kaleidoscope.animate();
         }
 
-        image.src = 'images/fractal.jpg';
+        image.src = 'images/sky-cloud.jpg';
 
 
         this.kaleidoscope.resize();
@@ -116,4 +116,5 @@ class Canvas {
 }
 
 
-module.exports = Canvas;
+export default Canvas;
+

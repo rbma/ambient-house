@@ -64,6 +64,7 @@
   },
   "browserify-shim": {
     "Graphemescope": "global:Graphemescope",
-    "Waypoint": "global:Waypoint"
+    "Waypoint": "global:Waypoint",
+    "PT": "global:PT"
   }
 }

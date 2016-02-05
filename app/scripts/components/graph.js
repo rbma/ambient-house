@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+import _ from 'lodash';
 
 class Kaleido {
 	
@@ -14,9 +14,9 @@ class Kaleido {
 	    this.zoomFactor = 1.0;
 	    this.angleFactor = 0.0;
 	    this.zoomTarget = options.zoomTarget || 1.2;
-	    this.angleTarget = options.angleTarget || 0.8;
+	    this.angleTarget = options.angleTarget || 0.2;
 	    this.easeEnabled = options.easeEnabled || true;
-	    this.ease = 0.2;
+	    this.ease = 0.5;
 	    this.domElement = document.createElement('canvas');
 	    this.ctx = this.domElement.getContext('2d');
 	    this.alphaFactor = 1.0;
@@ -192,7 +192,7 @@ class Kaleido {
 };
 
 
-module.exports = Kaleido;
+export default Kaleido;
 
 
 

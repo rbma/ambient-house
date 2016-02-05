@@ -1,8 +1,9 @@
 'use strict';
 
-const d3 = require('d3');
-const d3tip = require('d3-tip');
-const Audio = require('./audio');
+import d3 from 'd3';
+import d3tip from 'd3-tip';
+
+
 d3tip(d3);
 
 
@@ -23,13 +24,13 @@ const Tree = function(){
 	//
 	let margin = {
 		top: 60,
-		right: 20,
-		left: 20,
+		right: 50,
+		left: 50,
 		bottom: 20
 	};
 
 	const column = d3.select('.family-tree').node().getBoundingClientRect();
-	let width = column.width - margin.left - margin.right;
+	let width = column.width - 100;
 	let height = window.innerHeight * 1;
 
 	// ------------------------------------------------
@@ -64,6 +65,7 @@ const Tree = function(){
 	//
 	const svg = d3.select('.family-tree')
 		.append('svg')
+		.attr('class', 'svg-container')
 		.attr('width', width + margin.right + margin.left)
 		.attr('height', height + margin.top + margin.bottom)
 		.append('g')
@@ -99,6 +101,7 @@ const Tree = function(){
 		}
 		root = data;
 		root.children.forEach(collapse);
+		collapse(root);
 		update(root);
 	});
 
@@ -207,29 +210,10 @@ const Tree = function(){
 				tip.show(d);
 
 
-				Audio.onHover();
 			})
 			.on('mouseleave', tip.hide);
 
 
-
-		// ------------------------------------------------
-		// Set arc around node
-		//
-		let arc = d3.svg.arc()
-			.innerRadius(25)
-			.outerRadius(27)
-			.startAngle(Math.PI / 180)
-			.endAngle(2);
-		
-		// ------------------------------------------------
-		// Set circles around nodes
-		//
-		nodeEnter.append('path')
-			.attr('d', arc)
-			.style('fill', 'red');
-
-		
 
 		// ------------------------------------------------
 		// Set image for each incoming node
@@ -391,17 +375,11 @@ const Tree = function(){
 		if (d.children){
 			d._children = d.children;
 			d.children = null;
-			Audio.offClick();
 		}
 		else{
 			if (d._children){
 				d.children = d._children;
 				d._children = null;
-				Audio.onClick();
-			}
-
-			else{
-				Audio.offClick2();
 			}
 			
 		}
