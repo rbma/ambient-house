@@ -8,27 +8,6 @@
 }
 
 .container{
-	.loader{
-		z-index: 7;
-		width: 100%;
-		height: 100vh;
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 1;
-		@include transition(opacity 0.5s linear);
-		//background: url(../images/tile.png) repeat top left;
-		background-size: 10px;
-		background-color: $lightblue;
-		display: none;
-
-		@include mq("large"){
-			display: block;
-		}
-		&.gone{
-			opacity: 0;
-		}
-	}
 
 	.title-mobile{
 		position: relative;
@@ -51,16 +30,30 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		display: none;
+		height: 100vh;
 		overflow: hidden;
 		cursor: pointer;
+		text-align: center;
 		@include mq("large"){
 			display: block;
 		}
 		canvas{
-			z-index: 4;
+			z-index: 0;
+			position: absolute;
+			top: -50%;
+			left: 0;
 			//border: 10px solid black;
-			box-shadow: 2px 2px 5px black;
+		}
+
+		.chair-container{
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: url(../images/chair.png) no-repeat bottom right;
+			background-size: contain;
+			z-index: 999999;
 		}
 	}
 
@@ -72,11 +65,12 @@
 		height: 90%;
 		z-index: 6;
 		bottom: 50px;
-		z-index: 9;
+		z-index: 999999999999;
 		@include display(flex);
 		@include align-items(center);
 		@include justify-content(flex-end);
 		@include flex-direction(column);
+		font-family: 'maison';
 		//background: rgba(0,0,0,0.3);
 		text-align: center;
 		cursor: pointer;
@@ -120,6 +114,7 @@
 		margin: 0 0;
 		background: $lightblue;
 		padding: 0 1rem;
+		box-shadow: 2px 2px 2px black;
 		@include mq("medium"){
 			width: 80%;
 			margin: 0 10%;
@@ -134,10 +129,25 @@
 			margin: 50px 20%;
 		}
 
+		a{
+			color: inherit;
+			text-decoration: none;
+			border-bottom: 2px solid $pink;
+			box-shadow: inset 0 -8px 0 $pink;
+			transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
+			&:hover{
+				background: $pink;
+			}
+		}
+
 		.author{
 			color: $text;
 			text-shadow: 1px 1px 1px black;
 			margin: 10px 0;
+			a{
+				border-bottom: 0;
+				box-shadow: none;
+			}
 			.author-name{
 				background: $text;
 				color: $background;
@@ -157,13 +167,18 @@
 
 		.section-title{
 			width: 100%;
-			background-color: black;
-			color: white;
+			//background: $green;
+			background: white;
+			color: black;
 			border: $border;
 			margin: 50px 0;
 			padding: 20px;
 			box-shadow: 2px 2px 5px black;
 			text-align: center;
+			h1{
+				margin: 0;
+				padding: 0;
+			}
 			@include mq("large"){
 				width: 130%;
 				margin: 50px -15%;
@@ -195,46 +210,6 @@
 		}
 	}
 
-}
-
-.bg-image{
-	width: 95%;
-	margin: 25px 2.5%;
-	height: 400px;
-	background: transparent;
-	position: relative;
-	overflow: hidden;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-	background-position: center center !important;
-	background-color: $lightblue !important;
-	border: $border;
-	@include mq("medium"){
-		width: 80%;
-		margin: 25px 10%;
-	}
-	@include mq("large"){
-		width: 70%;
-		margin: 25px 15%;
-		height: 600px;
-		height: 100vh;
-	}
-	@include mq("widescreen"){
-		width: 80%;
-		margin: 25px 10%;
-	}
-	p{
-		position: absolute;
-		bottom: 10px;
-		left: 10px;
-		z-index: 5;
-		margin: 0;
-		background: $lightblue;
-		padding: 0 10px;
-		font-size: 1em;
-		border: $border;
-
-	}
 }
 
 

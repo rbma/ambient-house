@@ -4,11 +4,10 @@ import Headroom from 'headroom.js';
 import { FastClick } from 'fastclick';
 import MobileDetect from 'mobile-detect';
 
-import Canvas from './components/canvas';
+// import Canvas from './components/canvas';
 import Tree from './components/familytree';
 import Video from './components/video';
-import Audio from './components/audio';
-import Form from './components/form';
+import ThreeScene from './components/three-scope';
 
 
 
@@ -36,7 +35,6 @@ class Piece {
 		this.setupNav();
 		this.bindVideo();
 
-		//let form = new Form();
 
 		// ------------------------------------------------
 		// Sorry, device sniffing
@@ -49,20 +47,7 @@ class Piece {
 		// Desktop
 		//
 		if (!mobile){
-			
-			let img = new Image();
-
-			img.onload = function(){
-				let canvas = new Canvas(img);
-			}
-
-			img.src = 'images/fractal.jpg';
-
-			// ------------------------------------------------
-			// Init audio
-			//
-			Audio.init();
-			
+			let s = new ThreeScene();
 		}
 
 		// ------------------------------------------------
@@ -98,6 +83,7 @@ class Piece {
 				self.tree = null;
 			}
 		});
+
 	}
 
 

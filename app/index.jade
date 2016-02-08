@@ -8,7 +8,7 @@ html(lang="en")
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
 		link(rel="stylesheet", href="css/main.css")
 
-		title YOUR TITLE HERE
+		title Ambient House
 
 		meta(itemprop="name", content="xxxxxxxxxx")
 		meta(itemprop="description", content="xxxxxxxxxx")
@@ -68,7 +68,7 @@ html(lang="en")
 					a.share-icon.twitter(data-site="twitter")
 
 			.container#container
-				#loader.loader
+				//- #loader.loader
 				
 				#title-mobile.title-mobile
 					.title-text
@@ -76,7 +76,9 @@ html(lang="en")
 						h2 The Story Of Chill Out Music, 1988-95
 				
 				#title-canvas.title-canvas
-					.title-overlay
+					//- .title-overlay
+					
+					.chair-container
 						
 					.title-text
 						h1 <span class="lead">A</span>mbient <span class="lead">H</span>ouse
@@ -141,7 +143,7 @@ html(lang="en")
 
 
 					.section-title
-						h1 AMBIENT HOUSE IS NOT DANCE MUSIC
+						h1 “AMBIENT HOUSE IS NOT DANCE MUSIC”
 
 					p.
 						Paterson and Cauty’s shared clubbing experiences were the catalyst for ambient house. Both had embraced ecstasy culture, and were semi-regular fixtures on the dancefloors of leading London events, most notably Shoom. It can be hard separating fact and myth when it comes to Danny Rampling’s infamous parties, but there’s no doubt that the club’s groovy, loved-up and colourful approach – a far cry from the druggy intensity that would later be associated with the subsequent rave scene – was an influence on Paterson and Cauty’s later ambient house releases.
@@ -502,7 +504,14 @@ html(lang="en")
 
 
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js")
-		script(src="https://s3.amazonaws.com/rbma-special-features-assets/scripts/pt-ns.min.js")
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.js")
+		script(src="lib/CopyShader.js")
+		script(src="lib/KaleidoShader.js")
+		script(src="lib/RGBShiftShader.js")
+		script(src="lib/EffectComposer.js")
+		script(src="lib/RenderPass.js")
+		script(src="lib/MaskPass.js")
+		script(src="lib/ShaderPass.js")
 		script(src="js/bundle.js")
 
 		//-GA

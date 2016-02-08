@@ -461,6 +461,7 @@ gulp.task('dev', ['clean'], function(){
     runSequence([
         'apply-dev-environment',
         'data',
+        'lib',
         'audio',
         'extras',
         'views',
@@ -487,6 +488,7 @@ gulp.task('prod', ['clean'], function(){
     runSequence([
         'apply-prod-environment',
         'data',
+        'lib',
         'audio',
         'extras',
         'scripts-prod',

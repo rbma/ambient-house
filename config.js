@@ -37,6 +37,11 @@ module.exports = {
         'dest': 'build'
     },
 
+    'lib': {
+        'src': 'app/lib/**/*',
+        'dest': 'build/lib'
+    },
+
     'images': {
         'src': 'app/images/**/*',
         'dest': 'build/images'
