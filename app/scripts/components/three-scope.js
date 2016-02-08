@@ -14,6 +14,7 @@ class Kaleido {
 		this.group = null;
 		this.light = null;
 		this.animation = null;
+		this.destroyed = false;
 		this.parent = document.getElementById('title-canvas');
 
 		// ------------------------------------------------
@@ -148,7 +149,17 @@ class Kaleido {
 	}
 
 	destroy(){
-		cancelAnimationFrame(this.animate);
+		if (this.destroyed === false){
+			cancelAnimationFrame(this.animation);
+			this.destroyed = true;
+			let canvas = document.getElementById('three-canvas');
+			canvas.style.zIndex = '-1';
+		}
+
+		else{
+			return null;
+		}
+		
 	}
 
 	render(){

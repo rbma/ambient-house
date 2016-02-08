@@ -4,6 +4,7 @@ import Headroom from 'headroom.js';
 import { FastClick } from 'fastclick';
 import MobileDetect from 'mobile-detect';
 
+
 // import Canvas from './components/canvas';
 import Tree from './components/familytree';
 import Video from './components/video';
@@ -14,6 +15,7 @@ import ThreeScene from './components/three-scope';
 class Piece {
 	constructor(){
 		this.tree = null;
+		this.scene = null;
 		this.init();
 	}
 
@@ -24,7 +26,7 @@ class Piece {
 	init(){
 
 		const md = new MobileDetect();
-		let self = this;
+		const self = this;
 		let mobile = false;
 		
 
@@ -34,6 +36,30 @@ class Piece {
 		this.bindSocials();
 		this.setupNav();
 		this.bindVideo();
+
+		// ------------------------------------------------
+		// Add waypoints
+		//
+		let items = document.getElementsByClassName('section-title-img');
+
+		for (let i = 0; i < items.length; i++ ){
+			let w = new Waypoint({
+				element: items[i],
+				context: document.getElementById('body-wrapper'),
+				offset: '100%',
+				handler: function(direction){
+					if (direction === 'down'){
+						this.element.classList.add('grow');
+
+						if (self.scene){
+							self.scene.destroy();
+						}
+					}
+				}
+			});
+
+		}
+		
 
 
 		// ------------------------------------------------
@@ -47,7 +73,7 @@ class Piece {
 		// Desktop
 		//
 		if (!mobile){
-			let s = new ThreeScene();
+			this.scene = new ThreeScene();
 		}
 
 		// ------------------------------------------------

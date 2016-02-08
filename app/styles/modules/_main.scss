@@ -1,14 +1,16 @@
-@include keyframes(colorz){
+
+
+@include keyframes(grow){
 	from{
-		background-color: rgba(0,0,255,0.5);
+		@include transform(translateZ(-30px) rotate(-5deg));
 	}
 	to{
-		background-color: rgba(255,0,0,0.5);
+		@include transform(translateZ(0px) rotate(0deg));
 	}
 }
 
-.container{
 
+.container{
 	.title-mobile{
 		position: relative;
 		top: 0;
@@ -29,11 +31,13 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 600px;
 		height: 100vh;
 		overflow: hidden;
 		cursor: pointer;
 		text-align: center;
+		background: black;
+		@include fast();
 		@include mq("large"){
 			display: block;
 		}
@@ -54,6 +58,7 @@
 			background: url(../images/chair.png) no-repeat bottom right;
 			background-size: contain;
 			z-index: 999999;
+			mix-blend-mode: difference;
 		}
 	}
 
@@ -71,6 +76,7 @@
 		@include justify-content(flex-end);
 		@include flex-direction(column);
 		font-family: 'maison';
+		//mix-blend-mode: difference;
 		//background: rgba(0,0,0,0.3);
 		text-align: center;
 		cursor: pointer;
@@ -114,7 +120,8 @@
 		margin: 0 0;
 		background: $lightblue;
 		padding: 0 1rem;
-		box-shadow: 2px 2px 2px black;
+		
+		//box-shadow: 2px 2px 2px black;
 		@include mq("medium"){
 			width: 80%;
 			margin: 0 10%;
@@ -132,11 +139,11 @@
 		a{
 			color: inherit;
 			text-decoration: none;
-			border-bottom: 2px solid $pink;
-			box-shadow: inset 0 -8px 0 $pink;
+			border-bottom: 2px solid $purple;
+			box-shadow: inset 0 -8px 0 $purple;
 			transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
 			&:hover{
-				background: $pink;
+				background: $purple;
 			}
 		}
 
@@ -174,6 +181,8 @@
 			margin: 50px 0;
 			padding: 20px;
 			box-shadow: 2px 2px 5px black;
+			font-family: 'maison';
+			letter-spacing: 10px;
 			text-align: center;
 			h1{
 				margin: 0;
@@ -182,6 +191,30 @@
 			@include mq("large"){
 				width: 130%;
 				margin: 50px -15%;
+			}
+		}
+
+		.section-title-img{
+			width: 150%;
+			margin: 20px 0;
+			height: 600px;
+			margin-left: -25%;
+			overflow: hidden;
+			position: relative;
+			background-size: 100% !important;
+			background-position: center center !important;
+			background-repeat: no-repeat !important;
+			opacity: 0;
+			&.grow{
+				opacity: 1;
+				@include animation(grow 5s linear);
+			}
+			img{
+				mix-blend-mode: darken;
+				position: absolute;
+				left: 25%;
+				top: 25%;
+				width: 50%;
 			}
 		}
 

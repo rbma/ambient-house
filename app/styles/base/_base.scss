@@ -42,7 +42,7 @@ body{
 		// background-size: 10px;
 		// background-attachment: fixed;
 		//@include background(linear-gradient(25deg, $pink, $blue));
-		background: black;
+		//background: black;
 	}
 	&.invert{
 		@include filter(invert(1));
@@ -60,6 +60,7 @@ body{
 	overflow-y: auto;
 	position: relative;
 	z-index: 9;
+	@include perspective(600px);
 }
 
 
