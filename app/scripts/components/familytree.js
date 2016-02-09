@@ -16,6 +16,10 @@ const Tree = function(){
 
 	let initialTextVisible = true;
 	let infoActive = false;
+	const imageWidth = 60;
+	const halfImageWidth = 30;
+	const hoverImageWidth = 80;
+	const halfHoverImageWidth = 40;
 
 	
 
@@ -77,18 +81,25 @@ const Tree = function(){
 		});
 
 
-
+	// ------------------------------------------------
+	// Initialize tooltip
+	//
 	svg.call(tip);
 
 
 	// ------------------------------------------------
-	// Initial collapse of data
+	// Initial collapse of data (leave three rows initially)
 	//	
 	function collapse(d){
 		if (d.children){
-			d._children = d.children;
-			d._children.forEach(collapse);
-			d.children = null;
+			if (d.expandChildren === false){
+				d._children = d.children;
+				d._children.forEach(collapse);
+				d.children = null;
+			}
+			else{
+				d.children.forEach(collapse);
+			}
 		}
 	}
 
@@ -101,7 +112,7 @@ const Tree = function(){
 		}
 		root = data;
 		root.children.forEach(collapse);
-		collapse(root);
+		//collapse(root);
 		update(root);
 	});
 
@@ -162,27 +173,27 @@ const Tree = function(){
 			.attr('xlink:href', function(d){
 				return d.image;
 			})
-			.attr('x', '-25px')
-			.attr('y', '-25px')
-			.attr('width', '50px')
-			.attr('height', '50px')
+			.attr('x', -halfImageWidth + 'px')
+			.attr('y', -halfImageWidth + 'px')
+			.attr('width', imageWidth + 'px')
+			.attr('height', imageWidth + 'px')
 			.on('mouseover', function(d){
 				d3.select(this)
 					.transition()
 					.duration(300)
-					.attr('width', '80px')
-					.attr('height', '80px')
-					.attr('x', '-40px')
-					.attr('y', '-40px');
+					.attr('width', hoverImageWidth + 'px')
+					.attr('height', hoverImageWidth + 'px')
+					.attr('x', -halfHoverImageWidth +'px')
+					.attr('y', -halfHoverImageWidth + 'px');
 			})
 			.on('mouseout', function(d){
 				d3.select(this)
 					.transition()
 					.duration(300)
-					.attr('width', '50px')
-					.attr('height', '50px')
-					.attr('x', '-25px')
-					.attr('y', '-25px');
+					.attr('width', imageWidth + 'px')
+					.attr('height', imageWidth + 'px')
+					.attr('x', -halfImageWidth + 'px')
+					.attr('y', -halfImageWidth + 'px');
 			});
 
 		// ------------------------------------------------
@@ -190,7 +201,7 @@ const Tree = function(){
 		//
 		nodeEnter.append('text')
 			.attr('y', function(d){
-				return 40;
+				return 50;
 			})
 			.attr('dy', '.35em')
 			.attr('text-anchor', 'middle')
