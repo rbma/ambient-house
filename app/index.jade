@@ -59,6 +59,7 @@ html(lang="en")
 
 		.body-wrapper#body-wrapper
 
+			//-NAV
 			nav.main-nav#nav
 				a.logo(href="http://daily.redbullmusicacademy.com")
 				a.text(href="http://daily.redbullmusicacademy.com") Red Bull Music Academy Daily
@@ -67,16 +68,11 @@ html(lang="en")
 					a.share-icon.facebook(data-site="facebook")
 					a.share-icon.twitter(data-site="twitter")
 
+			//- MAIN BODY
 			.container#container
-				//- #loader.loader
-				
-				#title-mobile.title-mobile
-					.title-text
-						h1 <span class="lead">A</span>mbient <span class="lead">H</span>ouse
-						h2 The Story Of Chill Out Music, 1988-95
-				
+			
+				//- CANVAS APPENDS HERE
 				#title-canvas.title-canvas
-					//- .title-overlay
 					
 					.chair-container
 						
@@ -84,6 +80,7 @@ html(lang="en")
 						h1 <span class="lead">A</span>mbient <span class="lead">H</span>ouse
 						h2 The Story Of Chill Out Music, 1988-95
 
+				//- TEXT BODY
 				.body-container
 					.author Story By: <span class="author-name"><a href="">Matt Anniss</a></span>
 
@@ -95,7 +92,7 @@ html(lang="en")
 						The accompanying info sheet spelled this out in no uncertain terms. DJs were warned that the first record, which contained new remixes of the previously unissued “Last Train To Trancentral,” may be: “totally unlistenable to anyone who isn’t a freight train enthusiast or flat on their backs and out of their heads.”
 
 					p.
-						The second slab of wax emphasized this horizontal ethos. This was *Chill Out*, an imaginary soundtrack to a late night trip across America’s deep south, with all manner of sampled voices, melodies and environmental sound effects for company. “Don’t bother trying to listen to this LP if you have neither first switched off the lights and then laid your body to rest on the floor,” the info sheet warned. “Hopefully then the trip will be complete.”
+						The second slab of wax emphasized this horizontal ethos. This was <em>Chill Out</em>, an imaginary soundtrack to a late night trip across America’s deep south, with all manner of sampled voices, melodies and environmental sound effects for company. “Don’t bother trying to listen to this LP if you have neither first switched off the lights and then laid your body to rest on the floor,” the info sheet warned. “Hopefully then the trip will be complete.”
 					
 
 					p.
@@ -108,17 +105,21 @@ html(lang="en")
 					p.
 						Ultimately, it was a short-lived high. Having expanded globally at a rapid rate throughout the early ’90s, ambient house endured a painful comedown as the millennium approached. Where once it had provided the soundtrack to wavy, mind-altered moments via club “chill out rooms,” after-parties and mornings after on the sofa, ambient became the preserve of acid enthusiasts, middle-aged former ravers and po-faced academic musicians.
 
+					.body-image
+						img(src="images/klf-chill-out.jpg")
+						small.credit The KLF's aforementioned <em>Chill Out</em> record
+
 					p.
 						Sucked up and spat out by the music industry, “chill out” became a term more associated with cash-in compilations, sub-par trip-hop records, and self-indulgent material that lacked the panache, humour and out-there sensibilities of the style’s earliest explorations.
 
 					p.
 						Where once it had provided the soundtrack to wavy, mind-altered moments via club “chill out rooms”, after-parties and mornings after on the sofa, ambient became the preserve of acid enthusiasts, middle-aged former ravers, and po-faced academic musicians. Sucked up and spat out by the music industry, “chill out” became a term more associated with poor quality cash-in compilations, sub-par trip-hop records, and self-indulgent material that lacked the panache, humour, and out-there sensibilities of the style’s earliest explorations.
 
-					.section-title-img(style="background:url(images/quote1.png);")
-						img.cloud(src="images/chair4.png")
+					//- .section-title-img(style="background:url(images/quote1.png);")
+					//- 	img.cloud(src="images/chair4.png")
 
-					//- .section-title
-					//- 	h1 “AMBIENT HOUSE WILL BE SEEN BY SOME AS A CYNICALLY CONCOCTED FAD TO FEED THE EVER HUNGRY MEDIA MACHINE”
+					.section-title(style="background-image:url(images/bg-1.jpg);")
+						h1 “AMBIENT HOUSE WILL BE SEEN BY SOME AS A CYNICALLY CONCOCTED FAD TO FEED THE EVER HUNGRY MEDIA MACHINE”
 
 					p.
 						There was certainly a degree of cold calculation in Bill Drummond and Jimmy Cauty’s promotion of ambient house. By the time <em>Chill Out</em> hit record stores in February 1990, they had been developing the sound, along with friends “Dr” Alex Paterson and former Killing Joke man Martin “Youth” Glover, for well over a year. The term, and Drummond’s typically eccentric efforts to define it in print, emerged from a collective desire to control the media narrative surrounding the quartet’s releases. 
@@ -127,11 +128,11 @@ html(lang="en")
 						“It was either come up with something to describe what we were doing, or get lumbered with a genre or style name we didn’t want,” Paterson says. “Coming from working at E.G. Records, where the word ‘ambient’ was bandied around a lot, I knew it had to be in there in somewhere.”
 
 
-					//- .section-title
-					//- 	h1 “AMBIENT HOUSE IS NOT NEW AGE MUSIC”
+					.section-title(style="background-image:url(images/bg-2.jpg);")
+						h1 “AMBIENT HOUSE IS NOT NEW AGE MUSIC”
 
-					.section-title-img(style="background:url(images/quote2.png);")
-						img.cloud(src="images/chair2.png" style="float:right;")
+					//- .section-title-img(style="background:url(images/quote2.png);")
+					//- 	img.cloud(src="images/chair2.png" style="float:right;")
 
 					p.
 						Unlike most of the other founding fathers of ambient house, Duncan Robert Alex Paterson was intimately familiar with the first wave of ambient and New Age music that emerged throughout the ’70s and early ’80s. He’d been turned on to the style after finding a box of old Brian Eno records in the E.G. Records office, during his time working as a roadie, tour manager and odd-job man for Killing Joke.

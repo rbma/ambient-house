@@ -1,0 +1,18 @@
+@include keyframes(grow){
+	from{
+		@include transform(translateZ(-30px) rotate(-5deg));
+	}
+	to{
+		@include transform(translateZ(0px) rotate(0deg));
+	}
+}
+
+@include keyframes(blink){
+	from,
+	to{
+		color: transparent;
+	}
+	50%{
+		color: white;
+	}
+}

@@ -106,66 +106,7 @@ const Tree = function(){
 	});
 
 
-	function addInfo(d){
 
-
-		if (!infoActive){
-			d3.select('.fixed-tree-container')
-				.classed('active', true);
-
-			infoActive = true;
-		}
-
-		if (timeout){
-			clearTimeout(timeout);
-		}
-
-		let infoBox = d3.select('.fixed-tree-container');
-		
-		infoBox.select('.artist')
-			.style('opacity', 0)
-			.transition()
-			.duration(duration)
-			.style('opacity', 1)
-			.text(function(){
-				return d.name;
-			});
-
-		infoBox.select('.bio')
-			.style('opacity', 0)
-			.transition()
-			.duration(duration)
-			.style('opacity', 1)
-			.text(function(){
-				return d.bio;
-			});
-
-
-	}
-
-	function removeInfo(){
-
-		let infoBox = d3.select('.fixed-tree-container');
-
-		infoBox.select('.artist')
-			.style('opacity', 1)
-			.transition()
-			.duration(duration * 2)
-			.style('opacity', 0);
-
-		infoBox.select('.bio')
-			.style('opacity', 1)
-			.transition()
-			.duration(duration * 2)
-			.style('opacity', 0);
-
-		timeout = setTimeout(function(){
-			infoBox.classed('active', false);
-			infoActive = false;
-		}, 1500);
-
-
-	}
 
 
 	// ------------------------------------------------
@@ -205,7 +146,6 @@ const Tree = function(){
 			})
 			.on("click", nodeclick)
 			.on('mouseenter', function(d){
-				// addInfo(d);
 				tip.offset([-20, 0]);
 				tip.show(d);
 

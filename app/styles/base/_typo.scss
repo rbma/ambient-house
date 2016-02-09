@@ -53,6 +53,19 @@
     text-rendering: optimizeLegibility;
 }
 
+/* Webfont: Neuropol-Regular */@font-face {
+    font-family: 'Neuropol';
+    src: url('../fonts/Neuropol-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Neuropol-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Neuropol-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Neuropol-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Neuropol-Regular.svg#Neuropol-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
 
 
 
@@ -65,8 +78,11 @@
 body{
 	font-family: 'Portrait', Helvetica, Arial, sans-serif;
 	color: $text;
-	font-size: 22px;
+	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
+	@include mq("large"){
+		font-size: 22px;
+	}
 }
 
 

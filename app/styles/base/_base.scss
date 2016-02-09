@@ -34,23 +34,9 @@ html{
 body{
 	margin: 0;
 	padding: 0;
-	background: $lightblue;
+	background-size: cover;
 	width: 100%;
 	height: 100%;
-	@include mq("large"){
-		// background: url(../images/tile.png) repeat top left;
-		// background-size: 10px;
-		// background-attachment: fixed;
-		//@include background(linear-gradient(25deg, $pink, $blue));
-		//background: black;
-	}
-	&.invert{
-		@include filter(invert(1));
-		.container{
-			background: $lightblue;
-			color: red;
-		}
-	}
 }
 
 .body-wrapper{
