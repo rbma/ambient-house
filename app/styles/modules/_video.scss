@@ -11,9 +11,8 @@
 	padding: 5px;
 	cursor: pointer;
 	margin: 50px 0;
-	border: $border;
-	background: black;
-	color: $lightblue;
+	background: white;
+	color: black;
 	&.video-right{
 		@include mq("large"){
 			float: right;
@@ -29,7 +28,6 @@
 	.video-caption{
 		font-family: 'maison';
 		font-size: 0.75rem;
-		padding-top: 20px;
 		display: block;
 		margin-top: 1em;
 	}

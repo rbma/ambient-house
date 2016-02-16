@@ -3,21 +3,21 @@
 {
   "name": "The KLF",
   "image": "images/chart/klf.png",
-  "bio": "The KLF were a British acid house band of the late 1980s and early 1990s. Beginning in 1987, Bill Drummond and Jimmy Cauty released hip hop-inspired and sample-heavy records as The Justified Ancients of Mu Mu, and on one occasion as The Timelords.",
+  "bio": "Bill Drummond and Jimmy Cauty’s lasting artistic legacy comes not just from their iconic LPs, but from their anarchic approach to promotion and culture-jamming, such as burning one million pounds sterling on television in 1994.",
   "depth": 0,
   "expandChildren": true,
   "children": [
     {
       "name": "The Orb",
       "image": "images/chart/orb.png",
-      "bio": "The Orb are an English electronic music group known for spawning the genre of ambient house. Founded in 1988 by Alex Paterson and KLF member Jimmy Cauty, the Orb began as ambient and dub DJs in London.",
+      "bio": "One of the most influential groups in the history of contemporary electronic music, pioneers of ambient house and with several records from their early ’90s purple patch hailed as touchstones of the chill out genre.",
       "depth": 1,
       "expandChildren": true,
       "children": [
         {
           "name": "Steve Hillage",
           "image": "images/chart/steve-hillage.png",
-          "bio": "Stephen Simpson 'Steve' Hillage is an English musician, best known as a guitarist. He is associated with the Canterbury scene and has worked in experimental domains since the late 1960s.",
+          "bio": "An English guitarist who founded ’70s prog rock and jazz fusion bands, Khan and Gong, and wrote and produced solo albums of experimental ambient music.",
           "depth": 2,
           "expandChildren": false,
           "children": [
@@ -26,14 +26,14 @@
               "image": "images/chart/system-7.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "System 7 are a British ambient dance band. Due to the existence of another band called System Seven they were initially billed as 777 in North America."
+              "bio": "A collab between Steve Hillage and French keyboard player and vocalist Miquette Giraudy, featuring special guests like Derrick May, Laurent Garnier and Carl Craig."
             }
           ]
         },
         {
           "name": "Mixmaster Morris",
           "image": "images/chart/morris.png",
-          "bio": "Mixmaster Morris is an English ambient DJ and underground musician. Relating specifically to ambient music, Morris stated 'It's exactly what you need if you have a busy and stressful life.",
+          "bio": "An English DJ, radio host and music journalist specializing in the “chill out” sound. In addition, he released solo albums on labels such as Rising High and Ninja Tune.",
           "depth": 2,
           "expandChildren": false,
           "children": [
@@ -42,28 +42,28 @@
               "image": "images/chart/mira-calix.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "Mira Calix is the stage name of Chantal Francesca Passamonte, a British-based artist signed to Warp Records."
+              "bio": "A Durban-born, London-based composer that has written several solo albums for Warp Records, scoring orchestral soundtracks for films, theatrical performances and gallery installations."
             },
             {
               "name": "Aphex Twin",
               "image": "images/chart/aphex.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "Richard David James, best known by his alias Aphex Twin, is an Irish-born British electronic musician and composer"
+              "bio": "One of the pioneers of contemporary British experimental electronic music, mixing downtempo breakbeats into ambient techno and abstracted jungle. Often labelled as IDM."
             },
             {
               "name": "The Black Dog",
               "image": "images/chart/black-dog.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "The Black Dog is a British electronic music group, founded by Ken Downie along with Ed Handley and Andy Turner"
+              "bio": "A UK techno trio who have released records since the early 1990s. In 2010, they released a response to Brian Eno’s seminal 1970s work, entitled Music For Real Airports."
             },
             {
               "name": "Move D",
               "image": "images/chart/move-d.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "David Moufang is a German ambient techno musician. He records with his partner, Jonas Grossmann as Deep Space Network project and his solo releases as Move D. His other projects include Earth to Infinity, Reagenz, Koolfang, and Conjoint.",
+              "bio": "A German DJ and producer who has worked within ambient and techno since the early 1990s. Collabs include Deep Space Network and Magic Mountain High.",
               "children": [
                 {
                   "name": "HIA",
@@ -86,7 +86,7 @@
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/tetsu.png",
-              "bio": "Tetsu Inoue is a producer of electronic music. His style could be described as ambient with a heavy minimalist influence.",
+              "bio": "Closely aligned to the sound of Brian Eno, this ambient Japanese producer has created over 20 full-length releases since the early 1990s.",
               "children": [
                 {
                   "name": "Mr. YT",
@@ -102,7 +102,7 @@
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/coldcut.png",
-              "bio": "Coldcut are an English electronic music duo composed of Matt Black and Jonathan More. Credited as pioneers for pop sampling in the ‘80s, Coldcut are also considered the first stars of UK electronic",
+              "bio": "Jonathan More and Matt Black’s collage-like sampling saw them hailed as one of the pioneering groups of the ’80s and ’90s hip hop and dance music crossover scene.",
               "children": [
                 {
                   "name": "DJ Food",
@@ -125,14 +125,14 @@
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/deep-space-network.png",
-              "bio": "Complete your Deep Space Network record collection. Discover Deep Space Network's full discography. Shop new and used Vinyl and CDs."
+              "bio": "Experimental ambient techno project featuring producer and DJ Move D and Jonas Grossmann. Influences included progressive rock, easy listening pop and jazz."
             },
             {
               "name": "Rising High",
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/rising-high.png",
-              "bio": "Rising High Records was a leading British record label, established in 1991, specializing in rave, techno and ambient chillout music.",
+              "bio": "A key British label in the growth of the ’90s ambient techno and chill out styles, releasing hundreds of records throughout the ’90s from the likes of Mixmaster Morris, Luke Vibert and The Hypnotist.",
               "children": [
                 {
                   "name": "Pete Namlook",
@@ -160,12 +160,12 @@
           "image": "images/chart/wau.png",
           "depth": 2,
           "expandChildren": false,
-          "bio": "WAU/Mr. Modo Records was a record label set up by Alex Paterson of The Orb and Martin Glover of Killing Joke. 'WAU' stands for 'What About Us?'' and 'Mr. Modo' is Adam Morris, Paterson's manager. They released several early albums by The Orb that were mainly distributed by record labels such as Big Life. WAU/Mr. Modo Records featured releases from many different ambient artists including Sun Electric, Blue Pearl, and Keiichi Suzuki of the Japanese band Moonriders."
+          "bio": "An enormously influential ambient label founded by Alex Paterson and Youth. Many of the most well-known releases by the Orb first appeared here."
         },
         {
           "name": "Thomas Fehlmann",
           "image": "images/chart/thomas-fehlmann.png",
-          "bio": "Thomas Fehlmann, is a Swiss-born composer/producer who currently lives in Berlin, and has been active in electronic music as far back as the 1980s. He is currently active on the Kompakt record label based in Germany.",
+          "bio": "An artist bridging multiple generations of ambient music, dating back to his days as a member of the Orb up to and including work on his own label Teutonic Beats and recent releases via Kompakt and Editions Mego.",
           "depth": 2,
           "expandChildren": false,
           "children": [
@@ -174,14 +174,14 @@
               "image": "images/chart/sun-electric.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "Sun Electric is the name of an electronic music group from Berlin. Their first release was the single 'O'Locco' on the Wau! Mr. Modo label in 1990, and they had a considerable body of work released via the R&S / Apollo labels throughout the following decade."
+              "bio": "A group composed of Tom Thiel and Max Loderbauer, who first released via WAU! Mr. Modo before beginning a career-long collaboration with R&S. The duo are considered key innovators of IDM."
             },
             {
               "name": "FFWD",
               "image": "images/chart/ffwd.png",
               "depth": 3,
               "expandChildren": false,
-              "bio": "Collaboration between Robert Fripp, Thomas Fehlmann, Kris Weston (aka Thrash), and Alex Paterson. Fripp was a founding member of King Crimson, and the other three were all members of The Orb (though Thrash would soon depart from the group.)"
+              "bio": "Something of an ambient all-star team, composed of Robert Fripp, Thomas Fehlmann, Kris Weston and Alex Paterson."
             }
           ]
         },
@@ -189,7 +189,7 @@
           "name": "Tom Green / Baku",
           "image": "images/chart/tom-green.png",
           "expandChildren": false,
-          "bio": "Another Fine Day, aka film/tv composer Tom Green, is a contributor to 5 albums by The Orb and performer at the Big Chill Festivals 1994>2010.",
+          "bio": "A frequent collaborator of the Orb. His sole release under the Baku alias was 1990’s Desert Fresh EP on WAU! Mr. Modo.",
           "depth": 2,
           "children": [
             {
@@ -197,7 +197,7 @@
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/another-fine-day.png",
-              "bio": "Another Fine Day, aka film/tv composer Tom Green, is a contributor to 5 albums by The Orb and performer at the Big Chill Festivals 1994>2010."
+              "bio": "An alias of Tom Green, with notable releases on the UK’s influential Beyond label and Canada’s Interchill."
             }
           ]
         },
@@ -205,7 +205,7 @@
           "name": "Youth",
           "expandChildren": false,
           "image": "images/chart/youth.png",
-          "bio": "Martin Glover, also known as Youth or Orion,[1] (born 27 December 1960 in Farnworth, Lancashire) is a record producer and a founding member and bassist of Killing Joke. He is a member of The Fireman, along with Paul McCartney.",
+          "bio": "The original bassist in Killing Joke, co-producer of the Orb’s seminal ‘Adventures Beyond...’ and co-founder of the WAU! Mr. Modo record label alongside Alex Paterson.",
           "depth": 2,
           "children": [
             {
@@ -213,7 +213,7 @@
               "depth": 3,
               "expandChildren": false,
               "image": "images/chart/fireman.png",
-              "bio": "The Fireman is the duo of Paul McCartney and Youth (Martin Glover), which records electronic music experiments. Although the members of the band had officially remained anonymous until 2008,[1] their names had been known to the public since soon after the release of their first album"
+              "bio": "A collaboration between Youth and Paul McCartney of the Beatles, together creating primarily downtempo psychedelic electronic music."
             }
           ]
         }

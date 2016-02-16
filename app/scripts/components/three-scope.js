@@ -148,7 +148,20 @@ class Kaleido {
 		this.render();
 	}
 
-	destroy(){
+	start(){
+		
+		if (this.destroyed){
+			this.destroyed = false;
+			this.animate();
+		}
+
+		else{
+			return null;
+		}
+
+	}
+
+	stop(){
 		if (this.destroyed === false){
 			cancelAnimationFrame(this.animation);
 			this.destroyed = true;
@@ -161,6 +174,7 @@ class Kaleido {
 		}
 		
 	}
+
 
 	render(){
 		if (this.kaleidoscope || this.colorshift){

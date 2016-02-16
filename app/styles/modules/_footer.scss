@@ -10,7 +10,6 @@ footer{
 	margin-top: 7em;
 	margin-left: 2.5%;
 	margin-bottom: 50px;
-	background: $lightblue;
 	@include mq("medium"){
 		width: 75%;
 		margin-left: 12.5%;

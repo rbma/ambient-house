@@ -38,31 +38,6 @@ class Piece {
 		this.bindVideo();
 
 		// ------------------------------------------------
-		// Add waypoints
-		//
-		let items = document.getElementsByClassName('section-title-img');
-
-		for (let i = 0; i < items.length; i++ ){
-			let w = new Waypoint({
-				element: items[i],
-				context: document.getElementById('body-wrapper'),
-				offset: '100%',
-				handler: function(direction){
-					if (direction === 'down'){
-						this.element.classList.add('grow');
-
-						if (self.scene){
-							self.scene.destroy();
-						}
-					}
-				}
-			});
-
-		}
-		
-
-
-		// ------------------------------------------------
 		// Sorry, device sniffing
 		//
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -96,6 +71,35 @@ class Piece {
 		// Add chart just in case, even though we don't display on mobile
 		//
 		this.tree = Tree();
+
+		// ------------------------------------------------
+		// Add waypoints
+		//
+		let wDown = new Waypoint({
+			element: document.getElementById('break'),
+			context: document.getElementById('body-wrapper'),
+			offset: '100%',
+			handler: function(direction){
+				if (direction === 'down'){
+					this.element.classList.add('grow');
+
+					if (self.scene){
+						self.scene.stop();
+					}
+				}
+			}
+		});
+
+		let wUp = new Waypoint({
+			element: document.getElementById('break'),
+			context: document.getElementById('body-wrapper'),
+			offset: '100%',
+			handler: function(direction){
+				if (direction === 'up'){
+					self.scene.start();
+				}
+			}
+		});
 
 
 		// ------------------------------------------------

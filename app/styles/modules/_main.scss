@@ -5,6 +5,20 @@
 // 
 // -------------------------------------------------
 
+@include keyframes(borderCycle){
+	0%{
+		border-top: 5px solid rgba(255,0,0,1);
+		border-right: 5px solid rgba(0,255,0,1);
+		border-bottom: 5px solid rgba(0,0,255,1);
+		border-left: 5px solid $text;
+	}
+	50%{
+		border-top: 5px solid rgba(0,255,0,1);
+		border-right: 5px solid rgba(0,0,255,1);
+		border-bottom: 5px solid $text;
+		border-left: 5px solid rgba(255,0,0,1);
+	}
+}
 
 
 
@@ -56,7 +70,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		background: url(../images/chair.png) no-repeat bottom right;
+		background: url(../images/orb-ball.png) no-repeat bottom right;
 		background-size: contain;
 		z-index: 999999;
 		mix-blend-mode: difference;
@@ -87,7 +101,6 @@
 		font-size: 1.5em;
 		letter-spacing: 20px;
 		@include uppercase();
-		color: $lightblue;
 		width: 95%;
 		background: black;
 		padding: 5px 10px;
@@ -102,8 +115,8 @@
 	h2{
 		//font-family: 'maison';
 		//color: blue;
+		background: white;
 		@include uppercase();
-		background: $lightblue;
 		padding: 5px 10px;
 		font-size: 0.75em;
 		width: 95%;
@@ -120,7 +133,6 @@
 .body-container{
 	width: 100%;
 	margin: 0 0;
-	background: $lightblue;
 	padding: 0 1rem;
 	
 	//box-shadow: 2px 2px 2px black;
@@ -151,14 +163,14 @@
 
 	.author{
 		color: $text;
-		text-shadow: 1px 1px 1px black;
+		font-weight: bold;
 		margin: 20px 0;
 		a{
 			border-bottom: 0;
 			box-shadow: none;
 		}
 		.author-name{
-			padding: 0 5px;
+			text-decoration: underline;
 		}
 	}
 	.intro{
@@ -174,25 +186,21 @@
 
 	.section-title{
 		width: 100%;
-		//background: $green;
-		background: white;
+		background: $text;
 		color: black;
 		margin: 50px 0;
 		padding: 20px;
 		font-family: 'Neuropol', 'maison';
 		letter-spacing: 10px;
 		text-align: center;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: cover;
-		color: white;
-		text-shadow: 2px 2px 1px black, -2px -2px 1px black;
+		border: 5px solid $text;
+		//@include animation(borderCycle 1s steps(3) infinite alternate-reverse);
 		h1{
 			margin: 0;
 			padding: 0;
-			font-size: 1.25em;
+			font-size: 0.7em;
 			@include mq("large"){
-				font-size: 2em;
+				font-size: 0.75em;
 			}
 			//mix-blend-mode: exclusion;
 		}
@@ -229,6 +237,16 @@
 	.body-image{
 		margin: 50px 0;
 		display: block;
+		width: 100%;
+		&.center{
+			width: 150%;
+			margin-left: -25%;
+		}
+		&.right{
+			width: 75%;
+			float: right;
+			margin: 25px -25% 25px 25px;
+		}
 		img{
 			display: block;
 			width: 100%;
@@ -236,11 +254,19 @@
 
 		}
 		small{
+			color: $text;
 			display: block;
 			margin: 10px 0;
 			font-family: 'maison';
 			font-size: 0.6em;
-			color: rgba(0,0,0,0.6);
+			.credit{
+				color: $credit;
+				font-size: 0.75em;
+				float: right;
+				&:before{
+					content: '©';
+				}
+			}
 		}
 	}
 }
