@@ -48,9 +48,9 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		@include mq("large"){
-			top: -50%;
-		}
+		// @include mq("large"){
+		// 	top: -50%;
+		// }
 		//border: 10px solid black;
 	}
 

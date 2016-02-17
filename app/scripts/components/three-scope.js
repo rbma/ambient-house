@@ -34,9 +34,7 @@ class Kaleido {
 		this.loadThree();
 
 	}
-		// script(src="lib/MaskPass.js")
-		// script(src="lib/ShaderPass.js")
-		// script(src="js/bundle.js")
+
 
 
 	loadThree(){
@@ -159,8 +157,10 @@ class Kaleido {
 		this.scene = new THREE.Scene();
 		this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 		this.renderer = new THREE.WebGLRenderer({antialias: false, alpha: true});
+		this.renderer.setSize(window.innerWidth, window.innerHeight);
 
-		this.renderer.setSize(window.innerWidth, window.innerWidth);
+
+		
 		this.parent.appendChild(this.renderer.domElement);
 		this.renderer.domElement.setAttribute('id', 'three-canvas');
 
@@ -243,7 +243,7 @@ class Kaleido {
 		window.addEventListener('resize', function(e){
 			self.camera.updateProjectionMatrix();
 
-			self.renderer.setSize(window.innerWidth, window.innerWidth);
+			self.renderer.setSize(window.innerWidth, window.innerHeight);
 		}, false);
 
 		
