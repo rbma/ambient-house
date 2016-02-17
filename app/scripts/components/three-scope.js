@@ -31,8 +31,127 @@ class Kaleido {
 		this.wireframe = false;
 		
 
-		this.init();
+		this.loadThree();
 
+	}
+		// script(src="lib/MaskPass.js")
+		// script(src="lib/ShaderPass.js")
+		// script(src="js/bundle.js")
+
+
+	loadThree(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const threeScript = document.createElement('script');
+
+		headTag.appendChild(threeScript);
+
+		threeScript.onload = function(){
+			self.loadCopyShader();
+		};
+
+		threeScript.src = 'https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js';
+	}
+
+	loadCopyShader(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const cScript = document.createElement('script');
+
+		headTag.appendChild(cScript);
+
+		cScript.onload = function(){
+			self.loadKaleidoShader();
+		};
+
+		cScript.src = 'lib/CopyShader.js';
+	}
+
+	loadKaleidoShader(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const kScript = document.createElement('script');
+
+		headTag.appendChild(kScript);
+
+		kScript.onload = function(){
+			self.loadRGBShader();
+		};
+
+		kScript.src = 'lib/KaleidoShader.js';
+	}
+
+
+	
+
+	loadRGBShader(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const rScript = document.createElement('script');
+
+		headTag.appendChild(rScript);
+
+		rScript.onload = function(){
+			self.loadEffectShader();
+		};
+
+		rScript.src = 'lib/RGBShiftShader.js';
+	}
+
+	loadEffectShader(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const eScript = document.createElement('script');
+
+		headTag.appendChild(eScript);
+
+		eScript.onload = function(){
+			self.loadRenderPass();
+		};
+
+		eScript.src = 'lib/EffectComposer.js';
+	}
+
+	loadRenderPass(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const pScript = document.createElement('script');
+
+		headTag.appendChild(pScript);
+
+		pScript.onload = function(){
+			self.loadMaskPass();
+		};
+
+		pScript.src = 'lib/RenderPass.js';
+	}
+
+	loadMaskPass(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const mScript = document.createElement('script');
+
+		headTag.appendChild(mScript);
+
+		mScript.onload = function(){
+			self.loadShaderPass();
+		};
+
+		mScript.src = 'lib/MaskPass.js';
+	}
+
+	loadShaderPass(){
+		const self = this;
+		const headTag = document.getElementsByTagName('head')[0];
+		const sScript = document.createElement('script');
+
+		headTag.appendChild(sScript);
+
+		sScript.onload = function(){
+			self.init();
+		};
+
+		sScript.src = 'lib/ShaderPass.js';
 	}
 
 	init(){
@@ -151,7 +270,6 @@ class Kaleido {
 	start(){
 		
 		if (this.destroyed){
-			console.log('started');
 			this.destroyed = false;
 			this.animate();
 		}
@@ -164,7 +282,6 @@ class Kaleido {
 
 	stop(){
 		if (this.destroyed === false){
-			console.log('destroyed');
 			cancelAnimationFrame(this.animation);
 			this.destroyed = true;
 			let canvas = document.getElementById('three-canvas');

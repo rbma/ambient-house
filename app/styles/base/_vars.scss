@@ -3,10 +3,12 @@
 // Vars
 // 
 // -------------------------------------------------
-$pink: rgba(244,152,203,1);
+$pink: rgba(255,0,255,1);
 $blue: rgba(91,144,210,1);
 $green: rgba(184,218,193,1);
-$purple: rgba(0,0,0,0.2);
+// $purple: rgba(100,0,100,1);
+$purple: $pink;
+$link: rgba(255,255,255,0.9);
 
 $background: black;
 $text: rgba(15,183,143,1);

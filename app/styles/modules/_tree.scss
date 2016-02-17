@@ -47,6 +47,7 @@
 	padding: 50px 0 0 0;
 	margin: 0;
 	display: none;
+	font-family: 'Neuropol';
 	@include mq("large"){
 		display: block;
 	}
@@ -56,14 +57,22 @@
 	}
 	h1{
 		@include uppercase();
-		background: $text;
-		color: black;
-		padding: 20px;
+		//@include background(linear-gradient(75deg, $purple, $text));
+		color: $text;
+		//padding: 20px;
 		width: 75%;
 		margin: 0 12.5%;
 		font-family: 'Neuropol';
 		font-size: 0.75em;
 		letter-spacing: 10px;
+		padding: 20px;
+		text-shadow: 2px 2px 2px $purple;
+		@include mq("large"){
+			font-size: 1em;
+		}
+	}
+	small{
+		font-size: 0.5em;
 	}
 }
 
@@ -110,7 +119,6 @@
 	text{
 		font: 10px 'maison';
 		fill: white;
-		text-shadow: 1px 1px 1px $text;
 		@include uppercase();
 	}
 	image{
@@ -120,7 +128,8 @@
 
 path.link{
 	fill: none;
-	stroke: rgba(255,255,255,0.5);
+	stroke: $text;
+	opacity: 0.5;
 	stroke-width: 1px;
 }
 

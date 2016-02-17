@@ -16,6 +16,7 @@ class Piece {
 	constructor(){
 		this.tree = null;
 		this.scene = null;
+		this.chartAdded = false;
 		this.init();
 	}
 
@@ -71,6 +72,7 @@ class Piece {
 		// Add chart just in case, even though we don't display on mobile
 		//
 		this.tree = Tree();
+		this.chartAdded = true;
 
 		// ------------------------------------------------
 		// Add waypoints
@@ -101,19 +103,6 @@ class Piece {
 			}
 		});
 
-
-		// ------------------------------------------------
-		// If user sizes up from mobile, make sure chart is ready
-		//
-		window.addEventListener('resize', function(){
-			if (window.innerWidth > 1024 || !self.tree){
-				self.tree = Tree();
-			}
-			if (window.innerWidth <= 1024 || self.tree){
-				self.tree = null;
-			}
-		});
-
 	}
 
 
@@ -139,7 +128,7 @@ class Piece {
 		let site = this.getAttribute('data-site');
 
 		if (site === 'twitter'){
-        	var tweet = 'YOUR TEXT HERE #RBMADaily';
+        	var tweet = 'Ambient House: A tribute to The Orb, KLF and Mixmaster Morris #RBMADaily';
         	window.open('https://twitter.com/home?status=' +
 	            (encodeURIComponent(tweet + ' ' +
 	            window.location.href)),

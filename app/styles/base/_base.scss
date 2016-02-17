@@ -14,7 +14,7 @@
 }
 
 ::selection{
-	background: rgba(255,0,255,1);
+	background: $pink;
 	color: $text;
 }
 
@@ -48,6 +48,7 @@ body{
 	position: relative;
 	z-index: 9;
 	@include perspective(600px);
+	-webkit-overflow-scrolling: touch;
 }
 
 

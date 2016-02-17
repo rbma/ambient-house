@@ -70,14 +70,14 @@
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/higher-intelligence.png",
-                  "bio": "Higher Intelligence Agency, often also referred to by its acronym HIA, is the main electronic music project of Birmingham, UK based Bobby Bird, who is sometimes joined by collaborator Dave Wheels."
+                  "bio": "HIA is an abbreviation of Higher Intelligence Agency, the ambient alias of British Bobby Bird, who released three seminal LPs via the Beyond label in the early ’90s as well as collaborating with Pete Namlook and Biosphere."
                 },
                 {
                   "name": "Reagenz",
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/reagenz.png",
-                  "bio": "They recorded the first album, entitled 'Reagenz' in both San Francisco and David's native Heidelberg, Germany in 1994 after meeting before an early Autechre show in San Francisco."
+                  "bio": "Reagenz is Move D and Jonah Sharp, AKA Spacetime Continuum. They have worked together for decades, with 20 years elapsing between their debut self-titled LP and 2014’s The Periodic Table."
                 }
               ]
             },
@@ -93,7 +93,7 @@
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/mr-yt.png",
-                  "bio": "Yuji Takenouchi is a Japanese composer and sound designer."
+                  "bio": "Alias of Japanese producer Yuji Takenouchi, who released three EPs exclusively via Belgian labels between 1997 and 1998."
                 }
               ]
             },
@@ -109,14 +109,14 @@
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/djfood.png",
-                  "bio": "DJ Food is an electronic music project currently headed by Kevin Foakes, aka Strictly Kev. Originally conceived by the members of Coldcut on the Ninja Tune independent record label, the project started"
+                  "bio": "Originally a Coldcut side project, DJ Food evolved into a live project of Patrick Carpenter and Kevin Foakes, AKA Strictly Kev, releasing five volumes of the Jazz Brakes series between 1990 and 1994."
                 },
                 {
                   "name": "NTone Records",
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/ntone.png",
-                  "bio": "NTone is a sister imprint to the independent record label, Ninja Tune. The imprint is based in London, United Kingdom and specialises in experimental electronic music."
+                  "bio": "A Ninja Tune side label, NTone existed from 1994 until 2001 releasing records by the likes of Neotropic, Si Begg and Flanger (Atom TM + Brunt Friedman)."
                 }
               ]
             },
@@ -139,14 +139,14 @@
                   "depth": 4,
                   "expandChildren": false,
                   "image": "images/chart/pete-namlook.png",
-                  "bio": "Pete Namlook was an ambient and electronic-music producer and composer. In 1992, he founded the German record label FAX +49-69/450464, which he oversaw.",
+                  "bio": "Wildly prolific German producer and founder of experimental electronic label FAX, renowned for his collaborations with the likes of Move D., Atom TM., Richie Hawtin and Biosphere.",
                   "children": [
                     {
                       "name": "Fax Records",
                       "depth": 5,
                       "expandChildren": false,
                       "image": "images/chart/fax.png",
-                      "bio": "Lorem ipsum"
+                      "bio": "Founded by Pete Namlook under the official name FAX +49-69/450464 in 1992, this label mainly released Namlook’s solo and collaborative productions and had three sub-labels, including the vast catalog of Atom TM’s Rather Interesting."
                     }
                   ]
                 }

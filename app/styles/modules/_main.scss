@@ -33,11 +33,15 @@
 	overflow: hidden;
 	cursor: pointer;
 	text-align: center;
-	background: black;
+	@include background(linear-gradient($text, rgba(100,0,100,1)));
 	@include fast();
+	@include mq("medium"){
+
+	}
 	@include mq("large"){
 		height: 600px;
 		height: 100vh;
+		background: black;
 	}
 	canvas{
 		z-index: 0;
@@ -51,15 +55,22 @@
 	}
 
 	.chair-container{
-		width: 50%;
+		width: 80%;
 		height: 100%;
 		position: absolute;
 		top: 0;
-		right: 0;
-		background: url(../images/orb-ball.png) no-repeat bottom right;
+		right: 10%;
+		background: url(../images/orb-ball.png) no-repeat center right;
 		background-size: contain;
-		z-index: 999999;
-		mix-blend-mode: difference;
+		
+		
+		
+		@include mq("large"){
+			width: 40%;
+			background: url(../images/orb-ball.png) no-repeat bottom right;
+			background-size: contain;
+			mix-blend-mode: difference;
+		}
 	}
 }
 
@@ -120,8 +131,8 @@
 	
 	//box-shadow: 2px 2px 2px black;
 	@include mq("medium"){
-		width: 80%;
-		margin: 0 10%;
+		width: 85%;
+		margin: 0 7.5%;
 	}
 	@include mq("large"){
 		width: 70%;
@@ -136,12 +147,9 @@
 	a{
 		color: inherit;
 		text-decoration: none;
-		border-bottom: 2px solid $purple;
-		box-shadow: inset 0 -8px 0 $purple;
+		border-bottom: 2px solid $link;
+		box-shadow: inset 0 -4px 0 $link;
 		transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
-		&:hover{
-			background: $purple;
-		}
 	}
 
 	.author{
@@ -158,9 +166,7 @@
 	}
 	.intro{
 		font-size: 1em;
-		@include mq("medium"){
-			font-size: 1.25em;
-		}
+
 		@include mq("large"){
 			font-size: 1.75em;
 		}
@@ -169,21 +175,26 @@
 
 	.section-title{
 		width: 100%;
-		background: $text;
-		color: black;
+		//@include background(linear-gradient(75deg, $text, $purple));
+		color: $text;
 		margin: 50px 0;
-		padding: 20px;
+		padding: 50px 10px;
 		font-family: 'Neuropol', 'maison';
 		letter-spacing: 10px;
 		text-align: center;
-		border: 5px solid $text;
+		text-shadow: 2px 2px 2px $purple;
+		border-radius: 20px;
+		// &:nth-child(3n+3){
+		// 	@include background(linear-gradient(75deg, $purple, $text));
+		// }
 		//@include animation(borderCycle 1s steps(3) infinite alternate-reverse);
 		h1{
 			margin: 0;
 			padding: 0;
 			font-size: 0.7em;
+			line-height: 2;
 			@include mq("large"){
-				font-size: 0.75em;
+				font-size: 1em;
 			}
 			//mix-blend-mode: exclusion;
 		}
@@ -222,13 +233,20 @@
 		display: block;
 		width: 100%;
 		&.center{
-			width: 150%;
-			margin-left: -25%;
+			width: 100%;
+			@include mq("large"){
+				width: 150%;
+				margin-left: -25%;
+			}
 		}
 		&.right{
-			width: 75%;
-			float: right;
-			margin: 25px -25% 25px 25px;
+			width: 100%;
+			@include mq("large"){
+				width: 75%;
+				float: right;
+				margin: 25px -25% 25px 25px;
+			}
+			
 		}
 		img{
 			display: block;
@@ -244,7 +262,6 @@
 			font-size: 0.6em;
 			.credit{
 				color: $credit;
-				font-size: 0.75em;
 				float: right;
 				&:before{
 					content: '©';

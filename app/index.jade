@@ -3,35 +3,35 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		meta(name="robots", content="index,follow")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
 		link(rel="stylesheet", href="css/main.css")
 
-		title Ambient House
+		title Ambient House: The Story of Chill Out Music, 1988 - 1995 | Red Bull Music Academy Daily
 
-		meta(itemprop="name", content="xxxxxxxxxx")
-		meta(itemprop="description", content="xxxxxxxxxx")
-		meta(itemprop="image", content="http://daily.redbullmusicacademy.com/specials/xxxxxxxxxx")
+		meta(itemprop="name", content="Ambient House: The Story of Chill Out Music, 1988 - 1995")
+		meta(itemprop="description", content="A tribute to a brief moment in time when chill out rooms were the norm in clubland.")
+		meta(itemprop="image", content="http://daily.redbullmusicacademy.com/specials/2016-ambient-house-feature")
 
-		meta(name="description", content="xxxxxxxxxx")
+		meta(name="description", content="A tribute to a brief moment in time when chill out rooms were the norm in clubland.")
 
 		//-FB
-		meta(property="og:title", content="xxxxxxxxxx | Red Bull Music Academy Daily")
-		meta(property="og:description", content="xxxxxxxxxx")
+		meta(property="og:title", content="Ambient House: The Story of Chill Out Music, 1988 - 1995 | Red Bull Music Academy Daily")
+		meta(property="og:description", content="A tribute to a brief moment in time when chill out rooms were the norm in clubland.")
 		meta(property="og:type", content="article")
-		meta(property="og:url", content="http://daily.redbullmusicacademy.com/xxxxxxxxxx/")
-		meta(property="og:image", content="http://daily.redbullmusicacademy.com/xxxxxxxxxx")
+		meta(property="og:url", content="http://daily.redbullmusicacademy.com/specials/2016-ambient-house-feature/")
+		meta(property="og:image", content="http://daily.redbullmusicacademy.com/specials/2016-ambient-house-feature/images/ambient-house-mixmaster-morris.jpg")
 		meta(property="og:site_name", content="Red Bull Music Academy Daily")
 		meta(property="fb:admins", content="100006789941377")
 
 		//-Twitter
 		meta(name="twitter:card", content="summary_large_image")
 		meta(name="twitter:site", content="@rbma")
-		meta(name="twitter:title", content="xxxxxxxxxx | RBMA Daily")
-		meta(name="twitter:description", content="xxxxxxxxxx")
+		meta(name="twitter:title", content="Ambient House: The Story of Chill Out Music, 1988 - 1995")
+		meta(name="twitter:description", content="A tribute to a brief moment in time when chill out rooms were the norm in clubland.")
 		meta(name="twitter:creator", content="@rbma")
-		meta(name="twitter:image:src", content="xxxxxxxxxx")
+		meta(name="twitter:image:src", content="http://daily.redbullmusicacademy.com/specials/2016-ambient-house-feature/images/ambient-house-mixmaster-morris.jpg")
 
 
 		link(rel="author", href="https://plus.google.com/+RBMA/posts")
@@ -57,16 +57,19 @@ html(lang="en")
 
 	body
 
+		nav.main-nav#nav
+			a.logo(href="http://daily.redbullmusicacademy.com")
+			a.text(href="http://daily.redbullmusicacademy.com") Red Bull Music Academy Daily
+
+			.social
+				a.share-icon.facebook(data-site="facebook")
+				a.share-icon.twitter(data-site="twitter")
+
 		.body-wrapper#body-wrapper
+			.box
 
 			//-NAV
-			nav.main-nav#nav
-				a.logo(href="http://daily.redbullmusicacademy.com")
-				a.text(href="http://daily.redbullmusicacademy.com") Red Bull Music Academy Daily
-
-				.social
-					a.share-icon.facebook(data-site="facebook")
-					a.share-icon.twitter(data-site="twitter")
+			
 
 			//- MAIN BODY
 			.container#container
@@ -204,7 +207,8 @@ html(lang="en")
 
 				//- FAMILY TREE
 				.tree-container
-					h1 Family Tree Of Ambient House*
+					h1 Family Tree Of Ambient House
+					small (Click artists to expand)
 
 					.family-tree#family-tree
 					div(style="clear:both")
@@ -562,55 +566,47 @@ html(lang="en")
 									a(href="http://www.redbullmusicacademy.com/p/newsletter") Newsletter
 
 
-			//- .fixed-tree-container
-			//- 	h1.artist
-			//- 	p.bio
-
 
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js")
-		script(src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js")
-		script(src="lib/CopyShader.js")
-		script(src="lib/KaleidoShader.js")
-		script(src="lib/RGBShiftShader.js")
-		script(src="lib/EffectComposer.js")
-		script(src="lib/RenderPass.js")
-		script(src="lib/MaskPass.js")
-		script(src="lib/ShaderPass.js")
 		script(src="js/bundle.js")
 
 		//-GA
-		//- script.
-		//- 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		//- 	ga('create', 'UA-21347469-1', 'auto');
-		//- 	ga('send', 'pageview');
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-21347469-1', 'auto');
+			ga('send', 'pageview');
 
-		//- //-Webtrekk 1
-		//- script.
-		//- 	var edWrapperNameSpace = {};
-		//- 	edWrapperNameSpace.aGTM = [
-		//- 	"GTM-LVJ5",     // hq
-		//- 	"GTM-7W7M",     // hq
-		//- 	"GTM-HPZK",     // hq
-		//- 	"GTM-WWXSFT"    // property
-		//- 	];
-		//- 	var edWrapper = [];
+		//-Webtrekk 1
+		script.
+			var edWrapperNameSpace = {};
+			edWrapperNameSpace.aGTM = [
+			"GTM-LVJ5",     // hq
+			"GTM-7W7M",     // hq
+			"GTM-HPZK",     // hq
+			"GTM-WWXSFT"    // property
+			];
+			var edWrapper = [];
 
-		//- //- Webtrekk 2
-		//- script.
-		//- 	edWrapperNameSpace.sVers = -1;
-		//- 	edWrapperNameSpace.aInitialInnerWrapper = [["downloads.redbull.com/webtrekk/innereWrapper/gtm/innerWrapper_gtm.js",false]];
-		//- 	edWrapperNameSpace.sWrapperSrc = ["downloads.redbull.com/webtrekk/edAnalyticsWrapper.js","downloads.redbull.com/webtrekk/confWrapper.js"];
+		//- Webtrekk 2
+		script.
+			edWrapperNameSpace.sVers = -1;
+			edWrapperNameSpace.aInitialInnerWrapper = [["downloads.redbull.com/webtrekk/innereWrapper/gtm/innerWrapper_gtm.js",false]];
+			edWrapperNameSpace.sWrapperSrc = ["downloads.redbull.com/webtrekk/edAnalyticsWrapper.js","downloads.redbull.com/webtrekk/confWrapper.js"];
 
-		//- 	(function (sVarName) {
-		//- 		window.edWrapperNameSpace.sEdWrapperObjectName = sVarName; window[sVarName] = window[sVarName] || [];
-		//- 		var script = document.createElement('script'); script.type = 'text/javascript';script.asyn = false; 
-		//- 		script.src = ('https:' == document.location.protocol ? 'https://' : 'http://')+edWrapperNameSpace.sWrapperSrc[0] + "?v=" + edWrapperNameSpace.sVers;
-		//- 		var script2 = document.getElementsByTagName('script')[0]; script2.parentNode.insertBefore(script, script2);
-		//- 	})("edWrapper");
+			(function (sVarName) {
+				window.edWrapperNameSpace.sEdWrapperObjectName = sVarName; window[sVarName] = window[sVarName] || [];
+				var script = document.createElement('script'); script.type = 'text/javascript';script.asyn = false; 
+				script.src = ('https:' == document.location.protocol ? 'https://' : 'http://')+edWrapperNameSpace.sWrapperSrc[0] + "?v=" + edWrapperNameSpace.sVers;
+				var script2 = document.getElementsByTagName('script')[0]; script2.parentNode.insertBefore(script, script2);
+			})("edWrapper");
 
-		//- script.
-		//- 	edWrapper.push( [ 'trackPageView' , false , {1:'IntMS' , 2:'IntMS - int' , 3:'IntMS - int - Red Bull Music Academy'} , true ] );
-		//- 	edWrapper.push( [ 'trackPageVar' , 'Language' , 'en'] );
-		//- 	edWrapper.push( [ 'trackPageVar' , 'Domain incl. Subdomain' , window.location.hostname] );
-		//- 	edWrapper.push( [ 'trackPageVar' , 'Type' , 'IntMS'] );
-		//- 	edWrapper.push(['submit']);
+		script.
+			edWrapper.push( [ 'trackPageView' , false , {1:'IntMS' , 2:'IntMS - int' , 3:'IntMS - int - Red Bull Music Academy'} , true ] );
+			edWrapper.push( [ 'trackPageVar' , 'Language' , 'en'] );
+			edWrapper.push( [ 'trackPageVar' , 'Domain incl. Subdomain' , window.location.hostname] );
+			edWrapper.push( [ 'trackPageVar' , 'Type' , 'IntMS'] );
+			edWrapper.push(['submit']);
+
+
+
+
