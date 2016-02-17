@@ -5,10 +5,11 @@ import querystring from 'querystring';
 
 class Video {
 
-	constructor(target, src){
+	constructor(target, src, host){
 
 		this.target = target;
 		this.src = src;
+		this.host = host || null;
 
 		this.init();
 	}

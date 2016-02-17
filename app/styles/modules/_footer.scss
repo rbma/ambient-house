@@ -7,9 +7,10 @@ footer{
 	width: 95%;
 	color: $text;
 	font-family: 'maison', Helvetica, Arial;
-	margin-top: 7em;
+	margin-top: 1em;
 	margin-left: 2.5%;
 	margin-bottom: 50px;
+	font-size: 16px;
 	@include mq("medium"){
 		width: 75%;
 		margin-left: 12.5%;

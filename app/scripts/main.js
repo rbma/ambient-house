@@ -186,10 +186,18 @@ class Piece {
 	// Instantiate new video
 	//
 	playVideo(){
-		let target = this;
-		let src = target.getAttribute('data-src');
+		const target = this;
+		const src = target.getAttribute('data-src');
+		let host = target.getAttribute('data-host');
 
-		let video = new Video(target, src);
+		if (target.getAttribute('data-host')){
+			host = target.getAttribute('data-host');
+			
+		}
+
+		const video = new Video(target, src, host);
+
+		
 	}
 	
 	

@@ -151,6 +151,7 @@ class Kaleido {
 	start(){
 		
 		if (this.destroyed){
+			console.log('started');
 			this.destroyed = false;
 			this.animate();
 		}
@@ -163,6 +164,7 @@ class Kaleido {
 
 	stop(){
 		if (this.destroyed === false){
+			console.log('destroyed');
 			cancelAnimationFrame(this.animation);
 			this.destroyed = true;
 			let canvas = document.getElementById('three-canvas');
