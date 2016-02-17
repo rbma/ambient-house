@@ -191,7 +191,7 @@
 		width: 100%;
 		//@include background(linear-gradient(75deg, $text, $purple));
 		margin: 50px 0;
-		padding: 20px 10px;
+		padding: 20px;
 		font-family: 'Neuropol', 'maison';
 		letter-spacing: 10px;
 		text-align: center;
@@ -199,7 +199,7 @@
 		color: black;
 		border-radius: 10px;
 		@include mq("large"){
-			padding: 50px 10px;
+			padding: 50px 20px;
 		}
 		&:nth-child(even){
 			@include background(linear-gradient(45deg, $purple, $text));
@@ -312,6 +312,7 @@
 	width: 100%;
 	height: 50px;
 	text-align: left;
+	margin-top: 50px;
 	.share-icon{
 		display: inline-block;
 		width: 40px;
