@@ -58,15 +58,16 @@
 	h1{
 		@include uppercase();
 		//@include background(linear-gradient(75deg, $purple, $text));
-		color: $text;
 		//padding: 20px;
 		width: 75%;
 		margin: 0 12.5%;
 		font-family: 'Neuropol';
 		font-size: 0.75em;
 		letter-spacing: 10px;
-		padding: 20px;
-		text-shadow: 2px 2px 2px $purple;
+		padding: 50px 20px;
+		@include background(linear-gradient(45deg, $text, $purple));
+		border-radius: 10px;
+		color: black;
 		@include mq("large"){
 			font-size: 1em;
 		}

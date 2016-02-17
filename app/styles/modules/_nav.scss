@@ -12,7 +12,7 @@ nav.main-nav{
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
-    color: white;
+    color: $text;
     font-size: 1.1em;
     position: fixed;
     top: 0;
